@@ -98,26 +98,11 @@ life_motto: "Make it work. Make it right. Make it fast."
 
 ## 🚀 Featured Projects
 
-<div align="center">
-<a href="https://github.com/SAY-5/DistributedDB">
-  <img width="400" src="https://github-readme-stats.vercel.app/api/pin/?username=SAY-5&repo=DistributedDB&theme=react&bg_color=0d1117&title_color=0E8B70&hide_border=true&icon_color=F8D866&show_icons=true&border_color=0d1117" alt="DistributedDB" />
-</a>
-<a href="https://github.com/SAY-5/TransactionChain">
-  <img width="400" src="https://github-readme-stats.vercel.app/api/pin/?username=SAY-5&repo=TransactionChain&theme=react&bg_color=0d1117&title_color=0E8B70&hide_border=true&icon_color=F8D866&show_icons=true&border_color=0d1117" alt="TransactionChain" />
-</a>
-</div>
-
-<details>
-<summary><b>📋 Project Details</b></summary>
-<br/>
-
 | Project | Impact | Stack |
 |:--------|:-------|:------|
-| **DistributedDB** | 1M+ tx, <500ms latency, 85% faster queries | C++, Cassandra, B+ Trees, WAL |
-| **TransactionChain** | 10K+ tx/sec, 30% lower latency, $1M+ daily | Java, Kafka, gRPC, Raft/2PC |
-| **VectorDB Optimization** | recall@10: 0.85→0.94, 45ms latency | Milvus, Weaviate, CUDA, HNSW |
-
-</details>
+| **[DistributedDB](https://github.com/SAY-5)** | 1M+ tx, <500ms latency, 85% faster queries via B+ tree indexing | `C++` `Cassandra` `WAL` `Consistent Hashing` |
+| **[TransactionChain](https://github.com/SAY-5)** | 10K+ tx/sec, 30% lower latency, Raft consensus | `Java` `Kafka` `gRPC` `2PC` |
+| **[VectorDB Optimization](https://github.com/SAY-5)** | recall@10: 0.85→0.94 at 45ms query latency | `Milvus` `Weaviate` `CUDA` `HNSW` |
 
 <br/>
 
@@ -138,17 +123,6 @@ life_motto: "Make it work. Make it right. Make it fast."
 
 <div align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=SAY-5&bg_color=0d1117&color=0E8B70&line=0E8B70&point=FFFFFF&area_color=0d1117&area=true&hide_border=true" alt="Activity Graph" />
-</div>
-
-<br/>
-
-<!-- SNAKE ANIMATION -->
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/SAY-5/SAY-5/output/github-snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/SAY-5/SAY-5/output/github-snake.svg" />
-    <img alt="github-snake" src="https://raw.githubusercontent.com/SAY-5/SAY-5/output/github-snake-dark.svg" />
-  </picture>
 </div>
 
 <br/>
