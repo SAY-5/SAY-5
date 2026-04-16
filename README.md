@@ -9,8 +9,8 @@
 <p>
   <a href="mailto:saiasish.cnp@gmail.com"><img src="https://img.shields.io/badge/email-saiasish.cnp%40gmail.com-4AF0C0?style=flat-square&labelColor=07080A&logo=maildotru&logoColor=4AF0C0" /></a>
   <a href="https://github.com/SAY-5"><img src="https://img.shields.io/badge/github-SAY--5-E8EAED?style=flat-square&labelColor=07080A&logo=github&logoColor=E8EAED" /></a>
-  <a href="https://www.linkedin.com/in/sai-asish-yamani/"><img src="https://img.shields.io/badge/linkedin-connect-0EA5E9?style=flat-square&labelColor=07080A&logo=linkedin&logoColor=0EA5E9" /></a>
-  <a href="https://github.com/SAY-5/Portfolio"><img src="https://img.shields.io/badge/portfolio-live-F0A04A?style=flat-square&labelColor=07080A&logo=vercel&logoColor=F0A04A" /></a>
+  <a href="https://www.linkedin.com/in/saiasishy/"><img src="https://img.shields.io/badge/linkedin-saiasishy-0EA5E9?style=flat-square&labelColor=07080A&logo=linkedin&logoColor=0EA5E9" /></a>
+  <a href="https://sayportfolio.vercel.app/"><img src="https://img.shields.io/badge/portfolio-sayportfolio.vercel.app-F0A04A?style=flat-square&labelColor=07080A&logo=vercel&logoColor=F0A04A" /></a>
 </p>
 
 </div>
