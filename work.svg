@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 620" width="1280" height="620">
+  <defs>
+    <linearGradient id="cardLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="tagPurple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7C6BFF" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#7C6BFF" stop-opacity="0.08"/>
+    </linearGradient>
+    <linearGradient id="tagTeal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4AF0C0" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#4AF0C0" stop-opacity="0.06"/>
+    </linearGradient>
+    <linearGradient id="tagBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563EB" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#2563EB" stop-opacity="0.08"/>
+    </linearGradient>
+    <linearGradient id="tagOrange" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F0A04A" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#F0A04A" stop-opacity="0.08"/>
+    </linearGradient>
+    <pattern id="dots2" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#FFFFFF" fill-opacity="0.03"/>
+    </pattern>
+  </defs>
+
+  <rect width="1280" height="620" fill="#08090C"/>
+  <rect width="1280" height="620" fill="url(#dots2)"/>
+
+  <g transform="translate(96, 60)">
+    <text x="0" y="0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#6B7085" letter-spacing="3.5">&#8212;&#8201;&#8201;&#8201;SELECTED WORK</text>
+    <text x="0" y="28" font-family="ui-sans-serif, -apple-system, 'Inter', 'Segoe UI', sans-serif" font-size="24" font-weight="600" fill="#E8EAED" letter-spacing="-0.8">Six projects I'd actually talk about in an interview.</text>
+  </g>
+
+  <!-- Cards: 3 columns x 2 rows, card = 368w x 180h, 32 gap, 96 margin -->
+  <!-- Row 1 Y=160 -->
+  <!-- Row 2 Y=380 -->
+
+  <!-- SpatialPathDB -->
+  <g transform="translate(96, 160)">
+    <rect width="368" height="180" rx="14" fill="#0D0E13" stroke="#FFFFFF" stroke-opacity="0.06"/>
+    <rect x="0" y="0" width="368" height="1" fill="url(#cardLine)"/>
+    <g transform="translate(24, 32)">
+      <rect x="0" y="-14" width="104" height="22" rx="6" fill="url(#tagPurple)"/>
+      <text x="14" y="1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#A89AFF" letter-spacing="1.5">FLAGSHIP</text>
+      <text x="0" y="34" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="22" font-weight="600" fill="#E8EAED" letter-spacing="-0.5">SpatialPathDB</text>
+      <text x="0" y="64" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="13" font-weight="400" fill="#8B8F9E" letter-spacing="-0.1">Hilbert-partitioned Postgres for digital pathology.</text>
+      <text x="0" y="82" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="13" font-weight="400" fill="#8B8F9E" letter-spacing="-0.1">2.5× viewport, 9.1× cold cache, 42M nuclei.</text>
+      <text x="0" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#6B7085" letter-spacing="2">PYTHON · POSTGRESQL · POSTGIS</text>
+    </g>
+  </g>
+
+  <!-- Netlat-Analyser -->
+  <g transform="translate(480, 160)">
+    <rect width="368" height="180" rx="14" fill="#0D0E13" stroke="#FFFFFF" stroke-opacity="0.06"/>
+    <rect x="0" y="0" width="368" height="1" fill="url(#cardLine)"/>
+    <g transform="translate(24, 32)">
+      <rect x="0" y="-14" width="116" height="22" rx="6" fill="url(#tagTeal)"/>
+      <text x="14" y="1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#6EEAC8" letter-spacing="1.5">OBSERVABILITY</text>
+      <text x="0" y="34" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="22" font-weight="600" fill="#E8EAED" letter-spacing="-0.5">Netlat-Analyser</text>
+      <text x="0" y="64" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="13" font-weight="400" fill="#8B8F9E" letter-spacing="-0.1">TCP latency + retransmit anomaly detection</text>
+      <text x="0" y="82" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="13" font-weight="400" fill="#8B8F9E" letter-spacing="-0.1">from pcap. EWMA baselines, k8s DaemonSet.</text>
+      <text x="0" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#6B7085" letter-spacing="2">PYTHON · PROMETHEUS · GRAFANA</text>
+    </g>
+  </g>
+
+  <!-- Sigma Terminal -->
+  <g transform="translate(864, 160)">
+    <rect width="368" height="180" rx="14" fill="#0D0E13" stroke="#FFFFFF" stroke-opacity="0.06"/>
+    <rect x="0" y="0" width="368" height="1" fill="url(#cardLine)"/>
+    <g transform="translate(24, 32)">
+      <rect x="0" y="-14" width="92" height="22" rx="6" fill="url(#tagBlue)"/>
+      <text x="14" y="1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#7AA5FF" letter-spacing="1.5">REALTIME</text>
+      <text x="0" y="34" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="22" font-weight="600" fill="#E8EAED" letter-spacing="-0.5">Sigma Terminal</text>
+      <text x="0" y="64" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="13" font-weight="400" fill="#8B8F9E" letter-spacing="-0.1">Bloomberg-style market terminal. Canvas</text>
+      <text x="0" y="82" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="13" font-weight="400" fill="#8B8F9E" letter-spacing="-0.1">charts, WebSocket, Claude equity research.</text>
+      <text x="0" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#6B7085" letter-spacing="2">NEXT.JS · WEBSOCKET · CANVAS</text>
+    </g>
+  </g>
+
+  <!-- QUIC CDN Simulator -->
+  <g transform="translate(96, 380)">
+    <rect width="368" height="180" rx="14" fill="#0D0E13" stroke="#FFFFFF" stroke-opacity="0.06"/>
+    <rect x="0" y="0" width="368" height="1" fill="url(#cardLine)"/>
+    <g transform="translate(24, 32)">
+      <rect x="0" y="-14" width="92" height="22" rx="6" fill="url(#tagOrange)"/>
+      <text x="14" y="1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#FFB878" letter-spacing="1.5">RESEARCH</text>
+      <text x="0" y="34" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="22" font-weight="600" fill="#E8EAED" letter-spacing="-0.5">QUIC CDN Simulator</text>
+      <text x="0" y="64" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="13" font-weight="400" fill="#8B8F9E" letter-spacing="-0.1">HTTP/3 vs HTTP/2 benchmark for video</text>
+      <text x="0" y="82" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="13" font-weight="400" fill="#8B8F9E" letter-spacing="-0.1">CDN. netem ground-truth validation mode.</text>
+      <text x="0" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#6B7085" letter-spacing="2">GO · QUIC · DOCKER · NETEM</text>
+    </g>
+  </g>
+
+  <!-- Sentinel -->
+  <g transform="translate(480, 380)">
+    <rect width="368" height="180" rx="14" fill="#0D0E13" stroke="#FFFFFF" stroke-opacity="0.06"/>
+    <rect x="0" y="0" width="368" height="1" fill="url(#cardLine)"/>
+    <g transform="translate(24, 32)">
+      <rect x="0" y="-14" width="80" height="22" rx="6" fill="url(#tagPurple)"/>
+      <text x="14" y="1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#A89AFF" letter-spacing="1.5">SECURITY</text>
+      <text x="0" y="34" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="22" font-weight="600" fill="#E8EAED" letter-spacing="-0.5">Sentinel</text>
+      <text x="0" y="64" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="13" font-weight="400" fill="#8B8F9E" letter-spacing="-0.1">Catches secrets, CVEs, and unsafe patterns</text>
+      <text x="0" y="82" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="13" font-weight="400" fill="#8B8F9E" letter-spacing="-0.1">before they ship. Plugs into CI.</text>
+      <text x="0" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#6B7085" letter-spacing="2">TYPESCRIPT · STATIC ANALYSIS</text>
+    </g>
+  </g>
+
+  <!-- Cubit Streaming -->
+  <g transform="translate(864, 380)">
+    <rect width="368" height="180" rx="14" fill="#0D0E13" stroke="#FFFFFF" stroke-opacity="0.06"/>
+    <rect x="0" y="0" width="368" height="1" fill="url(#cardLine)"/>
+    <g transform="translate(24, 32)">
+      <rect x="0" y="-14" width="96" height="22" rx="6" fill="url(#tagTeal)"/>
+      <text x="14" y="1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#6EEAC8" letter-spacing="1.5">SYSTEMS</text>
+      <text x="0" y="34" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="22" font-weight="600" fill="#E8EAED" letter-spacing="-0.5">Cubit Streaming</text>
+      <text x="0" y="64" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="13" font-weight="400" fill="#8B8F9E" letter-spacing="-0.1">Low-latency video pipeline for biomedical</text>
+      <text x="0" y="82" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="13" font-weight="400" fill="#8B8F9E" letter-spacing="-0.1">microscope cameras. Real-time acquisition.</text>
+      <text x="0" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#6B7085" letter-spacing="2">C++ · GSTREAMER · RTP</text>
+    </g>
+  </g>
+</svg>

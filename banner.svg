@@ -1,63 +1,82 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 360" width="1280" height="360">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 420" width="1280" height="420">
   <defs>
-    <radialGradient id="glow1" cx="15%" cy="30%" r="55%">
-      <stop offset="0%" stop-color="#7C6BFF" stop-opacity="0.35"/>
+    <radialGradient id="g1" cx="12%" cy="25%" r="60%">
+      <stop offset="0%" stop-color="#7C6BFF" stop-opacity="0.55"/>
       <stop offset="100%" stop-color="#08090C" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="glow2" cx="85%" cy="80%" r="50%">
-      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.28"/>
+    <radialGradient id="g2" cx="88%" cy="90%" r="55%">
+      <stop offset="0%" stop-color="#2563EB" stop-opacity="0.4"/>
       <stop offset="100%" stop-color="#08090C" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="glow3" cx="60%" cy="20%" r="30%">
-      <stop offset="0%" stop-color="#4AF0C0" stop-opacity="0.12"/>
+    <radialGradient id="g3" cx="65%" cy="15%" r="30%">
+      <stop offset="0%" stop-color="#4AF0C0" stop-opacity="0.2"/>
       <stop offset="100%" stop-color="#08090C" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="nameGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
-      <stop offset="60%" stop-color="#E8EAED" stop-opacity="1"/>
-      <stop offset="100%" stop-color="#9BA1B3" stop-opacity="1"/>
+    <linearGradient id="nameGrad" x1="0%" y1="0%" x2="100%" y2="30%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="55%" stop-color="#E8EAED"/>
+      <stop offset="100%" stop-color="#8B8F9E"/>
     </linearGradient>
     <linearGradient id="dotGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#7C6BFF"/>
       <stop offset="100%" stop-color="#4AF0C0"/>
     </linearGradient>
-    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
-      <path d="M 80 0 L 0 0 0 80" fill="none" stroke="#FFFFFF" stroke-opacity="0.025" stroke-width="1"/>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M 64 0 L 0 0 0 64" fill="none" stroke="#FFFFFF" stroke-opacity="0.028" stroke-width="1"/>
     </pattern>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
   </defs>
 
-  <rect width="1280" height="360" fill="#08090C"/>
-  <rect width="1280" height="360" fill="url(#grid)"/>
-  <rect width="1280" height="360" fill="url(#glow1)"/>
-  <rect width="1280" height="360" fill="url(#glow2)"/>
-  <rect width="1280" height="360" fill="url(#glow3)"/>
+  <rect width="1280" height="420" fill="#08090C"/>
+  <rect width="1280" height="420" fill="url(#grid)"/>
+  <rect width="1280" height="420" fill="url(#g1)"/>
+  <rect width="1280" height="420" fill="url(#g2)"/>
+  <rect width="1280" height="420" fill="url(#g3)"/>
 
-  <line x1="0" y1="359.5" x2="1280" y2="359.5" stroke="#FFFFFF" stroke-opacity="0.06"/>
+  <circle cx="960" cy="120" r="180" fill="#7C6BFF" opacity="0.08" filter="url(#soft)"/>
+  <circle cx="200" cy="340" r="140" fill="#4AF0C0" opacity="0.06" filter="url(#soft)"/>
 
-  <g transform="translate(96, 128)">
-    <circle cx="0" cy="0" r="4" fill="url(#dotGrad)"/>
-    <text x="18" y="4" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="500" fill="#8B8F9E" letter-spacing="3.2">SOFTWARE ENGINEER &#8201;&#8212;&#8201; SANTA CLARA, CA</text>
+  <line x1="0" y1="419.5" x2="1280" y2="419.5" stroke="#FFFFFF" stroke-opacity="0.08"/>
+
+  <g transform="translate(96, 132)">
+    <circle cx="0" cy="0" r="5" fill="url(#dotGrad)">
+      <animate attributeName="opacity" values="1;0.3;1" dur="2.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="0" cy="0" r="5" fill="none" stroke="#7C6BFF" stroke-opacity="0.5">
+      <animate attributeName="r" values="5;14;5" dur="2.4s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-opacity" values="0.5;0;0.5" dur="2.4s" repeatCount="indefinite"/>
+    </circle>
+    <text x="22" y="5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="500" fill="#8B8F9E" letter-spacing="3.5">AVAILABLE &#8201;&#8212;&#8201; SOFTWARE ENGINEER &#8201;&#8212;&#8201; SANTA CLARA, CA</text>
   </g>
 
-  <text x="96" y="210" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif" font-size="68" font-weight="600" fill="url(#nameGrad)" letter-spacing="-2.4">Sai Asish Yamani</text>
+  <text x="96" y="248" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif" font-size="96" font-weight="600" fill="url(#nameGrad)" letter-spacing="-4.5">Sai Asish Yamani</text>
 
-  <text x="96" y="256" font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="400" fill="#8B8F9E" letter-spacing="-0.3">Distributed systems &#8201;&#183;&#8201; low-latency infrastructure &#8201;&#183;&#8201; databases</text>
+  <g font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="400" letter-spacing="-0.3">
+    <text x="96" y="296" fill="#C0C4D0">I build systems that shouldn't break.</text>
+    <text x="96" y="326" fill="#8B8F9E">Low-latency infrastructure, partitioned storage, real-time pipelines.</text>
+  </g>
 
-  <g transform="translate(96, 298)" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" letter-spacing="1.8">
-    <text x="0" y="0" fill="#6B7085">C++</text>
-    <text x="52" y="0" fill="#3E4150">/</text>
-    <text x="72" y="0" fill="#6B7085">GO</text>
-    <text x="118" y="0" fill="#3E4150">/</text>
-    <text x="138" y="0" fill="#6B7085">RUST</text>
-    <text x="202" y="0" fill="#3E4150">/</text>
-    <text x="222" y="0" fill="#6B7085">PYTHON</text>
-    <text x="306" y="0" fill="#3E4150">/</text>
-    <text x="326" y="0" fill="#6B7085">TYPESCRIPT</text>
-    <text x="454" y="0" fill="#3E4150">/</text>
-    <text x="474" y="0" fill="#6B7085">POSTGRES</text>
-    <text x="582" y="0" fill="#3E4150">/</text>
-    <text x="602" y="0" fill="#6B7085">KAFKA</text>
-    <text x="678" y="0" fill="#3E4150">/</text>
-    <text x="698" y="0" fill="#6B7085">KUBERNETES</text>
+  <g transform="translate(96, 376)" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" letter-spacing="1.8" fill="#5A5E6B">
+    <text x="0" y="0">C++</text>
+    <text x="44" y="0" fill="#2E313B">·</text>
+    <text x="60" y="0">GO</text>
+    <text x="100" y="0" fill="#2E313B">·</text>
+    <text x="116" y="0">RUST</text>
+    <text x="172" y="0" fill="#2E313B">·</text>
+    <text x="188" y="0">PYTHON</text>
+    <text x="264" y="0" fill="#2E313B">·</text>
+    <text x="280" y="0">TYPESCRIPT</text>
+    <text x="388" y="0" fill="#2E313B">·</text>
+    <text x="404" y="0">POSTGRES</text>
+    <text x="500" y="0" fill="#2E313B">·</text>
+    <text x="516" y="0">KAFKA</text>
+    <text x="580" y="0" fill="#2E313B">·</text>
+    <text x="596" y="0">KUBERNETES</text>
+    <text x="716" y="0" fill="#2E313B">·</text>
+    <text x="732" y="0">AWS</text>
+    <text x="778" y="0" fill="#2E313B">·</text>
+    <text x="794" y="0">GCP</text>
   </g>
 </svg>
