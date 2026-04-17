@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 620" width="1280" height="620">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 820" width="1280" height="820">
   <defs>
     <linearGradient id="cardLineL" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#0A0A0F" stop-opacity="0"/>
@@ -26,20 +26,19 @@
     </pattern>
   </defs>
 
-  <rect width="1280" height="620" fill="#FAFAFB"/>
-  <rect width="1280" height="620" fill="url(#dots2L)"/>
+  <rect width="1280" height="820" fill="#FAFAFB"/>
+  <rect width="1280" height="820" fill="url(#dots2L)"/>
 
   <g transform="translate(96, 60)">
-    <text x="0" y="0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#8B8F9E" letter-spacing="3.5">&#8212;&#8201;&#8201;&#8201;SELECTED WORK</text>
-    <text x="0" y="28" font-family="ui-sans-serif, -apple-system, 'Inter', 'Segoe UI', sans-serif" font-size="24" font-weight="600" fill="#0A0A0F" letter-spacing="-0.8">Six projects I'd actually talk about in an interview.</text>
+    <text x="0" y="0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#8B8F9E" letter-spacing="3.5">&#8212;&#8201;&#8201;&#8201;PROJECTS</text>
+    <text x="0" y="28" font-family="ui-sans-serif, -apple-system, 'Inter', 'Segoe UI', sans-serif" font-size="24" font-weight="600" fill="#0A0A0F" letter-spacing="-0.8">Everything I've built from scratch.</text>
   </g>
 
-  <!-- SpatialPathDB -->
   <g transform="translate(96, 160)">
     <rect width="368" height="180" rx="14" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
     <rect x="0" y="0" width="368" height="1" fill="url(#cardLineL)"/>
     <g transform="translate(24, 32)">
-      <rect x="0" y="-14" width="104" height="22" rx="6" fill="url(#tagPurpleL)"/>
+      <rect x="0" y="-14" width="80" height="22" rx="6" fill="url(#tagPurpleL)"/>
       <text x="14" y="1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#5B4FD4" letter-spacing="1.5">FLAGSHIP</text>
       <text x="0" y="34" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="22" font-weight="600" fill="#0A0A0F" letter-spacing="-0.5">SpatialPathDB</text>
       <text x="0" y="64" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="13" font-weight="400" fill="#4A4E5A" letter-spacing="-0.1">Hilbert-partitioned Postgres for digital pathology.</text>
@@ -48,7 +47,6 @@
     </g>
   </g>
 
-  <!-- Netlat-Analyser -->
   <g transform="translate(480, 160)">
     <rect width="368" height="180" rx="14" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
     <rect x="0" y="0" width="368" height="1" fill="url(#cardLineL)"/>
@@ -62,7 +60,6 @@
     </g>
   </g>
 
-  <!-- Sigma Terminal -->
   <g transform="translate(864, 160)">
     <rect width="368" height="180" rx="14" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
     <rect x="0" y="0" width="368" height="1" fill="url(#cardLineL)"/>
@@ -76,7 +73,6 @@
     </g>
   </g>
 
-  <!-- QUIC CDN Simulator -->
   <g transform="translate(96, 380)">
     <rect width="368" height="180" rx="14" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
     <rect x="0" y="0" width="368" height="1" fill="url(#cardLineL)"/>
@@ -90,7 +86,6 @@
     </g>
   </g>
 
-  <!-- Sentinel -->
   <g transform="translate(480, 380)">
     <rect width="368" height="180" rx="14" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
     <rect x="0" y="0" width="368" height="1" fill="url(#cardLineL)"/>
@@ -104,17 +99,42 @@
     </g>
   </g>
 
-  <!-- Cubit Streaming -->
   <g transform="translate(864, 380)">
     <rect width="368" height="180" rx="14" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
     <rect x="0" y="0" width="368" height="1" fill="url(#cardLineL)"/>
     <g transform="translate(24, 32)">
-      <rect x="0" y="-14" width="96" height="22" rx="6" fill="url(#tagTealL)"/>
+      <rect x="0" y="-14" width="80" height="22" rx="6" fill="url(#tagTealL)"/>
       <text x="14" y="1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#0D8F82" letter-spacing="1.5">SYSTEMS</text>
       <text x="0" y="34" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="22" font-weight="600" fill="#0A0A0F" letter-spacing="-0.5">Cubit Streaming</text>
       <text x="0" y="64" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="13" font-weight="400" fill="#4A4E5A" letter-spacing="-0.1">Low-latency video pipeline for biomedical</text>
       <text x="0" y="82" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="13" font-weight="400" fill="#4A4E5A" letter-spacing="-0.1">microscope cameras. Real-time acquisition.</text>
       <text x="0" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#8B8F9E" letter-spacing="2">C++ · GSTREAMER · RTP</text>
+    </g>
+  </g>
+
+  <g transform="translate(256, 600)">
+    <rect width="368" height="180" rx="14" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+    <rect x="0" y="0" width="368" height="1" fill="url(#cardLineL)"/>
+    <g transform="translate(24, 32)">
+      <rect x="0" y="-14" width="100" height="22" rx="6" fill="url(#tagBlueL)"/>
+      <text x="14" y="1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#1E4FC4" letter-spacing="1.5">AUTOMATION</text>
+      <text x="0" y="34" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="22" font-weight="600" fill="#0A0A0F" letter-spacing="-0.5">career-ops</text>
+      <text x="0" y="64" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="13" font-weight="400" fill="#4A4E5A" letter-spacing="-0.1">AI-powered job-search ops. 14 skill modes,</text>
+      <text x="0" y="82" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="13" font-weight="400" fill="#4A4E5A" letter-spacing="-0.1">Go dashboard, PDF generation, batch runs.</text>
+      <text x="0" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#8B8F9E" letter-spacing="2">JAVASCRIPT · GO · CLAUDE CODE</text>
+    </g>
+  </g>
+
+  <g transform="translate(656, 600)">
+    <rect width="368" height="180" rx="14" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+    <rect x="0" y="0" width="368" height="1" fill="url(#cardLineL)"/>
+    <g transform="translate(24, 32)">
+      <rect x="0" y="-14" width="72" height="22" rx="6" fill="url(#tagOrangeL)"/>
+      <text x="14" y="1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="600" fill="#C46E1E" letter-spacing="1.5">DESIGN</text>
+      <text x="0" y="34" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="22" font-weight="600" fill="#0A0A0F" letter-spacing="-0.5">Portfolio</text>
+      <text x="0" y="64" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="13" font-weight="400" fill="#4A4E5A" letter-spacing="-0.1">Personal site — hand-written HTML/CSS with</text>
+      <text x="0" y="82" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="13" font-weight="400" fill="#4A4E5A" letter-spacing="-0.1">custom type, dark palette, no framework.</text>
+      <text x="0" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#8B8F9E" letter-spacing="2">HTML · CSS · VANILLA JS</text>
     </g>
   </g>
 </svg>
