@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <img src="./metrics.svg" alt="GitHub activity — 114 PRs merged, 98 repositories, 277 commits, 8 projects" width="100%"/>
+  <img src="./metrics.svg" alt="GitHub activity" width="100%"/>
 </p>
 
 <p align="center">
@@ -18,7 +18,7 @@
 </p>
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=SAY-5&bg_color=08090C&color=E8EAED&line=7C6BFF&point=4AF0C0&area=true&area_color=7C6BFF&hide_border=true&radius=12&custom_title=Contribution%20activity" width="100%"/>
+  <img src="./activity.svg" alt="Contribution heatmap" width="100%"/>
 </p>
 
 <p align="center">

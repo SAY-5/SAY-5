@@ -1,0 +1,37 @@
+name: refresh-svgs
+
+on:
+  schedule:
+    - cron: "0 7 * * 1"  # Every Monday 07:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Regenerate metrics.svg and activity.svg
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/refresh.py
+
+      - name: Commit changes
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet -- metrics.svg activity.svg; then
+            git add metrics.svg activity.svg
+            git commit -m "chore: weekly refresh of metrics + activity SVGs"
+            git push
+          else
+            echo "No changes to commit."
+          fi

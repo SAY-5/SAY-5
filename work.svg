@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 820" width="1280" height="820">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1060" width="1280" height="1060">
   <defs>
     <linearGradient id="cardLine" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0"/>
@@ -26,15 +26,13 @@
     </pattern>
   </defs>
 
-  <rect width="1280" height="820" fill="#08090C"/>
-  <rect width="1280" height="820" fill="url(#dots2)"/>
+  <rect width="1280" height="1060" fill="#08090C"/>
+  <rect width="1280" height="1060" fill="url(#dots2)"/>
 
   <g transform="translate(96, 60)">
     <text x="0" y="0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#6B7085" letter-spacing="3.5">&#8212;&#8201;&#8201;&#8201;PROJECTS</text>
     <text x="0" y="28" font-family="ui-sans-serif, -apple-system, 'Inter', 'Segoe UI', sans-serif" font-size="24" font-weight="600" fill="#E8EAED" letter-spacing="-0.8">Everything I've built from scratch.</text>
   </g>
-
-  <!-- Row 1: SpatialPathDB · Netlat-Analyser · Sigma Terminal -->
 
   <g transform="translate(96, 160)">
     <rect width="368" height="180" rx="14" fill="#0D0E13" stroke="#FFFFFF" stroke-opacity="0.06"/>
@@ -75,8 +73,6 @@
     </g>
   </g>
 
-  <!-- Row 2: QUIC CDN · Sentinel · Cubit Streaming -->
-
   <g transform="translate(96, 380)">
     <rect width="368" height="180" rx="14" fill="#0D0E13" stroke="#FFFFFF" stroke-opacity="0.06"/>
     <rect x="0" y="0" width="368" height="1" fill="url(#cardLine)"/>
@@ -116,22 +112,72 @@
     </g>
   </g>
 
-  <!-- Row 3: career-ops · Portfolio (centered) -->
+  <g transform="translate(96, 600)">
+    <rect width="368" height="180" rx="14" fill="#0D0E13" stroke="#FFFFFF" stroke-opacity="0.06"/>
+    <rect x="0" y="0" width="368" height="1" fill="url(#cardLine)"/>
+    <g transform="translate(24, 32)">
+      <rect x="0" y="-14" width="92" height="22" rx="6" fill="url(#tagBlue)"/>
+      <text x="14" y="1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#7AA5FF" letter-spacing="1.5">AI AGENTS</text>
+      <text x="0" y="34" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="22" font-weight="600" fill="#E8EAED" letter-spacing="-0.5">agentlab</text>
+      <text x="0" y="64" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="13" font-weight="400" fill="#8B8F9E" letter-spacing="-0.1">Multi-model agent eval harness. 6 scorers,</text>
+      <text x="0" y="82" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="13" font-weight="400" fill="#8B8F9E" letter-spacing="-0.1">chaos injection, FastAPI dashboard.</text>
+      <text x="0" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#6B7085" letter-spacing="2">PYTHON · FASTAPI · SQLITE</text>
+    </g>
+  </g>
 
-  <g transform="translate(256, 600)">
+  <g transform="translate(480, 600)">
+    <rect width="368" height="180" rx="14" fill="#0D0E13" stroke="#FFFFFF" stroke-opacity="0.06"/>
+    <rect x="0" y="0" width="368" height="1" fill="url(#cardLine)"/>
+    <g transform="translate(24, 32)">
+      <rect x="0" y="-14" width="88" height="22" rx="6" fill="url(#tagOrange)"/>
+      <text x="14" y="1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#FFB878" letter-spacing="1.5">DEVTOOLS</text>
+      <text x="0" y="34" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="22" font-weight="600" fill="#E8EAED" letter-spacing="-0.5">context-surgeon</text>
+      <text x="0" y="64" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="13" font-weight="400" fill="#8B8F9E" letter-spacing="-0.1">Audits what Claude Code actually loads</text>
+      <text x="0" y="82" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="13" font-weight="400" fill="#8B8F9E" letter-spacing="-0.1">into context before you type.</text>
+      <text x="0" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#6B7085" letter-spacing="2">TYPESCRIPT · CLAUDE CODE</text>
+    </g>
+  </g>
+
+  <g transform="translate(864, 600)">
+    <rect width="368" height="180" rx="14" fill="#0D0E13" stroke="#FFFFFF" stroke-opacity="0.06"/>
+    <rect x="0" y="0" width="368" height="1" fill="url(#cardLine)"/>
+    <g transform="translate(24, 32)">
+      <rect x="0" y="-14" width="80" height="22" rx="6" fill="url(#tagPurple)"/>
+      <text x="14" y="1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#A89AFF" letter-spacing="1.5">PLATFORM</text>
+      <text x="0" y="34" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="22" font-weight="600" fill="#E8EAED" letter-spacing="-0.5">pluginforge</text>
+      <text x="0" y="64" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="13" font-weight="400" fill="#8B8F9E" letter-spacing="-0.1">Web Worker sandbox, capability permissions,</text>
+      <text x="0" y="82" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="13" font-weight="400" fill="#8B8F9E" letter-spacing="-0.1">typed RPC. 12 escape tests verify it holds.</text>
+      <text x="0" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#6B7085" letter-spacing="2">TYPESCRIPT · WEB WORKERS</text>
+    </g>
+  </g>
+
+  <g transform="translate(96, 820)">
+    <rect width="368" height="180" rx="14" fill="#0D0E13" stroke="#FFFFFF" stroke-opacity="0.06"/>
+    <rect x="0" y="0" width="368" height="1" fill="url(#cardLine)"/>
+    <g transform="translate(24, 32)">
+      <rect x="0" y="-14" width="72" height="22" rx="6" fill="url(#tagTeal)"/>
+      <text x="14" y="1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#6EEAC8" letter-spacing="1.5">COLLAB</text>
+      <text x="0" y="34" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="22" font-weight="600" fill="#E8EAED" letter-spacing="-0.5">canvaslive</text>
+      <text x="0" y="64" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="13" font-weight="400" fill="#8B8F9E" letter-spacing="-0.1">Real-time multiplayer whiteboard. Live</text>
+      <text x="0" y="82" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="13" font-weight="400" fill="#8B8F9E" letter-spacing="-0.1">cursors, OT conflict resolution, TP1-proven.</text>
+      <text x="0" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#6B7085" letter-spacing="2">TYPESCRIPT · REACT · NODE · WS</text>
+    </g>
+  </g>
+
+  <g transform="translate(480, 820)">
     <rect width="368" height="180" rx="14" fill="#0D0E13" stroke="#FFFFFF" stroke-opacity="0.06"/>
     <rect x="0" y="0" width="368" height="1" fill="url(#cardLine)"/>
     <g transform="translate(24, 32)">
       <rect x="0" y="-14" width="100" height="22" rx="6" fill="url(#tagBlue)"/>
       <text x="14" y="1" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#7AA5FF" letter-spacing="1.5">AUTOMATION</text>
-      <text x="0" y="34" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="22" font-weight="600" fill="#E8EAED" letter-spacing="-0.5">career-ops</text>
-      <text x="0" y="64" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="13" font-weight="400" fill="#8B8F9E" letter-spacing="-0.1">AI-powered job-search ops. 14 skill modes,</text>
-      <text x="0" y="82" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="13" font-weight="400" fill="#8B8F9E" letter-spacing="-0.1">Go dashboard, PDF generation, batch runs.</text>
-      <text x="0" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#6B7085" letter-spacing="2">JAVASCRIPT · GO · CLAUDE CODE</text>
+      <text x="0" y="34" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="22" font-weight="600" fill="#E8EAED" letter-spacing="-0.5">JobApplier</text>
+      <text x="0" y="64" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="13" font-weight="400" fill="#8B8F9E" letter-spacing="-0.1">Automated job application platform. AI</text>
+      <text x="0" y="82" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="13" font-weight="400" fill="#8B8F9E" letter-spacing="-0.1">resume tailoring, LaTeX, browser automation.</text>
+      <text x="0" y="122" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#6B7085" letter-spacing="2">PYTHON · LATEX · PLAYWRIGHT</text>
     </g>
   </g>
 
-  <g transform="translate(656, 600)">
+  <g transform="translate(864, 820)">
     <rect width="368" height="180" rx="14" fill="#0D0E13" stroke="#FFFFFF" stroke-opacity="0.06"/>
     <rect x="0" y="0" width="368" height="1" fill="url(#cardLine)"/>
     <g transform="translate(24, 32)">
