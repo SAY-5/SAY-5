@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 400" width="1280" height="400">
+  <defs>
+    <radialGradient id="fGlow1" cx="15%" cy="30%" r="55%">
+      <stop offset="0%" stop-color="#D97757" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#1A1714" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="fGlow2" cx="85%" cy="80%" r="45%">
+      <stop offset="0%" stop-color="#BBA68A" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#1A1714" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="fStat1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFCF4"/>
+      <stop offset="100%" stop-color="#D97757"/>
+    </linearGradient>
+    <linearGradient id="fStat2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFCF4"/>
+      <stop offset="100%" stop-color="#E8A27C"/>
+    </linearGradient>
+    <linearGradient id="fStat3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFCF4"/>
+      <stop offset="100%" stop-color="#BBA68A"/>
+    </linearGradient>
+    <pattern id="fDots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#F5F1E8" fill-opacity="0.03"/>
+    </pattern>
+  </defs>
+
+  <rect width="1280" height="400" fill="#1A1714"/>
+  <rect width="1280" height="400" fill="url(#fDots)"/>
+  <rect width="1280" height="400" fill="url(#fGlow1)"/>
+  <rect width="1280" height="400" fill="url(#fGlow2)"/>
+
+  <line x1="0" y1="0.5" x2="1280" y2="0.5" stroke="#F5F1E8" stroke-opacity="0.08"/>
+  <line x1="0" y1="399.5" x2="1280" y2="399.5" stroke="#F5F1E8" stroke-opacity="0.08"/>
+
+  <g transform="translate(96, 72)">
+    <text x="0" y="0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#A69B88" letter-spacing="3.5">&#8212;&#8201;&#8201;&#8201;FLAGSHIP  &#183;  CASE STUDY</text>
+    <text x="0" y="60" font-family="ui-serif, Charter, 'Copernicus', Georgia, serif" font-size="56" font-weight="500" fill="#F5F1E8" letter-spacing="-1.8">SpatialPathDB</text>
+
+    <g font-family="ui-sans-serif, -apple-system, 'Inter', 'Söhne', sans-serif" font-size="16" font-weight="400" fill="#BBA68A" letter-spacing="-0.2">
+      <text x="0" y="114">Hilbert-partitioned PostgreSQL storage for digital pathology.</text>
+      <text x="0" y="138">Built to answer spatial queries fast enough that a pathologist</text>
+      <text x="0" y="162">doesn't feel the panning lag on a 42-million-nucleus slide.</text>
+    </g>
+
+    <g transform="translate(0, 216)">
+      <rect width="6" height="6" rx="1" fill="#D97757"/>
+      <text x="18" y="6" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#A69B88" letter-spacing="2">29 TCGA SLIDES  &#183;  89% PARTITION PRUNING  &#183;  15 MS KNN P50</text>
+    </g>
+
+    <g transform="translate(0, 260)" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" letter-spacing="2" fill="#7A6E5E">
+      <text x="0" y="0">PYTHON</text>
+      <text x="72" y="0" fill="#3D3832">&#183;</text>
+      <text x="88" y="0">POSTGRESQL 17</text>
+      <text x="224" y="0" fill="#3D3832">&#183;</text>
+      <text x="240" y="0">POSTGIS 3.6</text>
+      <text x="354" y="0" fill="#3D3832">&#183;</text>
+      <text x="370" y="0">HILBERT CURVE</text>
+    </g>
+  </g>
+
+  <g transform="translate(836, 80)">
+    <line x1="0" y1="0" x2="348" y2="0" stroke="#F5F1E8" stroke-opacity="0.08"/>
+
+    <g transform="translate(0, 58)">
+      <text x="0" y="0" font-size="72" font-weight="500" font-family="ui-serif, Charter, Georgia, serif" fill="url(#fStat1)" letter-spacing="-3">2.5<tspan font-size="42" dx="-4" dy="-2" fill="#D97757">&#215;</tspan></text>
+      <text x="170" y="-24" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" font-weight="500" fill="#A69B88" letter-spacing="2.5">VIEWPORT LATENCY WIN</text>
+      <text x="170" y="-4" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="13" font-weight="400" fill="#7A6E5E" letter-spacing="-0.2">Partitioned vs. monolithic store</text>
+    </g>
+
+    <line x1="0" y1="94" x2="348" y2="94" stroke="#F5F1E8" stroke-opacity="0.08"/>
+
+    <g transform="translate(0, 152)">
+      <text x="0" y="0" font-size="72" font-weight="500" font-family="ui-serif, Charter, Georgia, serif" fill="url(#fStat2)" letter-spacing="-3">9.1<tspan font-size="42" dx="-4" dy="-2" fill="#E8A27C">&#215;</tspan></text>
+      <text x="170" y="-24" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" font-weight="500" fill="#A69B88" letter-spacing="2.5">COLD-CACHE SPEEDUP</text>
+      <text x="170" y="-4" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="13" font-weight="400" fill="#7A6E5E" letter-spacing="-0.2">53 ms vs. 486 ms, first touch</text>
+    </g>
+
+    <line x1="0" y1="188" x2="348" y2="188" stroke="#F5F1E8" stroke-opacity="0.08"/>
+
+    <g transform="translate(0, 246)">
+      <text x="0" y="0" font-size="72" font-weight="500" font-family="ui-serif, Charter, Georgia, serif" fill="url(#fStat3)" letter-spacing="-3">42<tspan font-size="42" dx="-2" dy="-2" fill="#BBA68A">M</tspan></text>
+      <text x="170" y="-24" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" font-weight="500" fill="#A69B88" letter-spacing="2.5">NUCLEI INDEXED</text>
+      <text x="170" y="-4" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="13" font-weight="400" fill="#7A6E5E" letter-spacing="-0.2">Across 857 leaf partitions</text>
+    </g>
+
+    <line x1="0" y1="282" x2="348" y2="282" stroke="#F5F1E8" stroke-opacity="0.08"/>
+  </g>
+</svg>

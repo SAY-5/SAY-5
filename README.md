@@ -10,11 +10,15 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/SAY-5/SpatialPathDB"><img src="./feature.svg" alt="SpatialPathDB — case study" width="100%"/></a>
+</p>
+
+<p align="center">
   <img src="./metrics.svg" alt="GitHub activity" width="100%"/>
 </p>
 
 <p align="center">
-  <img src="./work.svg" alt="Projects" width="100%"/>
+  <a href="https://github.com/SAY-5?tab=repositories"><img src="./work.svg" alt="Projects" width="100%"/></a>
 </p>
 
 <p align="center">
