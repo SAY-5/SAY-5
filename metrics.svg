@@ -1,33 +1,33 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 180" width="1280" height="180">
   <defs>
     <pattern id="mDots" width="40" height="40" patternUnits="userSpaceOnUse">
-      <circle cx="1" cy="1" r="1" fill="#F5F1E8" fill-opacity="0.03"/>
+      <circle cx="1" cy="1" r="1" fill="#FFFFFF" fill-opacity="0.025"/>
     </pattern>
   </defs>
-  <rect width="1280" height="180" fill="#1A1714"/>
+  <rect width="1280" height="180" fill="#0A0A0A"/>
   <rect width="1280" height="180" fill="url(#mDots)"/>
-  <line x1="0" y1="0.5" x2="1280" y2="0.5" stroke="#F5F1E8" stroke-opacity="0.08"/>
-  <line x1="0" y1="179.5" x2="1280" y2="179.5" stroke="#F5F1E8" stroke-opacity="0.08"/>
+  <line x1="0" y1="0.5" x2="1280" y2="0.5" stroke="#FFFFFF" stroke-opacity="0.08"/>
+  <line x1="0" y1="179.5" x2="1280" y2="179.5" stroke="#FFFFFF" stroke-opacity="0.08"/>
 
   <g transform="translate(96, 44)">
-    <text x="0" y="0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#A69B88" letter-spacing="3.5">&#8212;&#8201;&#8201;&#8201;GITHUB ACTIVITY</text>
+    <text x="0" y="0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#A1A1A1" letter-spacing="3.5">&#8212;&#8201;&#8201;&#8201;GITHUB ACTIVITY</text>
   </g>
 
-  <g font-family="ui-serif, Charter, Georgia, serif" font-size="52" font-weight="500" fill="#F5F1E8" letter-spacing="-2">
+  <g font-family="ui-serif, Charter, Georgia, serif" font-size="52" font-weight="500" fill="#FAFAFA" letter-spacing="-2">
     <text x="96" y="130">180</text>
     <text x="340" y="130">152</text>
-    <text x="630" y="130">393</text>
+    <text x="630" y="130">395</text>
     <text x="930" y="130">17</text>
   </g>
 
-  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#7A6E5E" letter-spacing="2">
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#525252" letter-spacing="2">
     <text x="96"  y="150">PRS MERGED</text>
     <text x="340" y="150">REPOSITORIES</text>
     <text x="630" y="150">COMMITS</text>
     <text x="930" y="150">ORIGINAL PROJECTS</text>
   </g>
 
-  <line x1="304" y1="84" x2="304" y2="154" stroke="#F5F1E8" stroke-opacity="0.06"/>
-  <line x1="594" y1="84" x2="594" y2="154" stroke="#F5F1E8" stroke-opacity="0.06"/>
-  <line x1="894" y1="84" x2="894" y2="154" stroke="#F5F1E8" stroke-opacity="0.06"/>
+  <line x1="304" y1="84" x2="304" y2="154" stroke="#FFFFFF" stroke-opacity="0.06"/>
+  <line x1="594" y1="84" x2="594" y2="154" stroke="#FFFFFF" stroke-opacity="0.06"/>
+  <line x1="894" y1="84" x2="894" y2="154" stroke="#FFFFFF" stroke-opacity="0.06"/>
 </svg>

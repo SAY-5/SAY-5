@@ -1,171 +1,163 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 620" width="1280" height="620">
   <defs>
     <linearGradient id="wLine" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#F5F1E8" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#F5F1E8" stop-opacity="0.14"/>
-      <stop offset="100%" stop-color="#F5F1E8" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
     </linearGradient>
-    <linearGradient id="tagTerra" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#D97757" stop-opacity="0.18"/>
-      <stop offset="100%" stop-color="#D97757" stop-opacity="0.06"/>
+    <linearGradient id="tagBright" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.04"/>
     </linearGradient>
-    <linearGradient id="tagSand" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#BBA68A" stop-opacity="0.14"/>
-      <stop offset="100%" stop-color="#BBA68A" stop-opacity="0.05"/>
-    </linearGradient>
-    <linearGradient id="moreGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#D97757" stop-opacity="0.15"/>
-      <stop offset="100%" stop-color="#1A1714" stop-opacity="0"/>
+    <linearGradient id="tagDim" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.02"/>
     </linearGradient>
     <pattern id="wDots" width="40" height="40" patternUnits="userSpaceOnUse">
-      <circle cx="1" cy="1" r="1" fill="#F5F1E8" fill-opacity="0.028"/>
+      <circle cx="1" cy="1" r="1" fill="#FFFFFF" fill-opacity="0.025"/>
     </pattern>
   </defs>
 
-  <rect width="1280" height="620" fill="#1A1714"/>
+  <rect width="1280" height="620" fill="#0A0A0A"/>
   <rect width="1280" height="620" fill="url(#wDots)"/>
 
   <g transform="translate(96, 60)">
-    <text x="0" y="0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#A69B88" letter-spacing="3.5">&#8212;&#8201;&#8201;&#8201;PROJECTS</text>
-    <text x="0" y="30" font-family="ui-serif, Charter, Georgia, serif" font-size="26" font-weight="500" fill="#F5F1E8" letter-spacing="-0.8">Eleven shipped from scratch.</text>
+    <text x="0" y="0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#A1A1A1" letter-spacing="3.5">&#8212;&#8201;&#8201;&#8201;PROJECTS</text>
+    <text x="0" y="30" font-family="ui-serif, Charter, Georgia, serif" font-size="26" font-weight="500" fill="#FAFAFA" letter-spacing="-0.8">Eleven shipped from scratch.</text>
   </g>
-
-  <!-- Tile grid: 4 cols × 3 rows, tiles 276w × 128h, gap 16 -->
-  <!-- Cols: x = 96, 388, 680, 972 -->
-  <!-- Rows: y = 160, 304, 448 -->
 
   <!-- Row 1 -->
   <g transform="translate(96, 160)">
-    <rect width="276" height="128" rx="12" fill="#22201D" stroke="#F5F1E8" stroke-opacity="0.06"/>
+    <rect width="276" height="128" rx="12" fill="#141414" stroke="#FFFFFF" stroke-opacity="0.06"/>
     <rect x="0" y="0" width="276" height="1" fill="url(#wLine)"/>
     <g transform="translate(20, 24)">
-      <rect x="0" y="-12" width="104" height="20" rx="5" fill="url(#tagTerra)"/>
-      <text x="12" y="2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#E8A27C" letter-spacing="1.5">OBSERVABILITY</text>
-      <text x="0" y="30" font-family="ui-serif, Charter, Georgia, serif" font-size="18" font-weight="500" fill="#F5F1E8" letter-spacing="-0.4">Netlat-Analyser</text>
-      <text x="0" y="54" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="12" font-weight="400" fill="#A69B88" letter-spacing="-0.1">pcap TCP latency + retransmit anomalies.</text>
-      <text x="0" y="88" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#7A6E5E" letter-spacing="1.6">PYTHON &#183; PROMETHEUS &#183; GRAFANA</text>
+      <rect x="0" y="-12" width="116" height="20" rx="5" fill="url(#tagBright)"/>
+      <text x="12" y="2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#FAFAFA" letter-spacing="1.5">OBSERVABILITY</text>
+      <text x="0" y="30" font-family="ui-serif, Charter, Georgia, serif" font-size="18" font-weight="500" fill="#FAFAFA" letter-spacing="-0.4">Netlat-Analyser</text>
+      <text x="0" y="54" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="12" font-weight="400" fill="#A1A1A1" letter-spacing="-0.1">pcap TCP latency + retransmit anomalies.</text>
+      <text x="0" y="88" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#525252" letter-spacing="1.6">PYTHON &#183; PROMETHEUS &#183; GRAFANA</text>
     </g>
   </g>
 
   <g transform="translate(388, 160)">
-    <rect width="276" height="128" rx="12" fill="#22201D" stroke="#F5F1E8" stroke-opacity="0.06"/>
+    <rect width="276" height="128" rx="12" fill="#141414" stroke="#FFFFFF" stroke-opacity="0.06"/>
     <rect x="0" y="0" width="276" height="1" fill="url(#wLine)"/>
     <g transform="translate(20, 24)">
-      <rect x="0" y="-12" width="72" height="20" rx="5" fill="url(#tagSand)"/>
-      <text x="12" y="2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#D4BF9E" letter-spacing="1.5">REALTIME</text>
-      <text x="0" y="30" font-family="ui-serif, Charter, Georgia, serif" font-size="18" font-weight="500" fill="#F5F1E8" letter-spacing="-0.4">Sigma Terminal</text>
-      <text x="0" y="54" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="12" font-weight="400" fill="#A69B88" letter-spacing="-0.1">Bloomberg-style market terminal.</text>
-      <text x="0" y="88" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#7A6E5E" letter-spacing="1.6">NEXT.JS &#183; WEBSOCKET &#183; CANVAS</text>
+      <rect x="0" y="-12" width="72" height="20" rx="5" fill="url(#tagDim)"/>
+      <text x="12" y="2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#A1A1A1" letter-spacing="1.5">REALTIME</text>
+      <text x="0" y="30" font-family="ui-serif, Charter, Georgia, serif" font-size="18" font-weight="500" fill="#FAFAFA" letter-spacing="-0.4">Sigma Terminal</text>
+      <text x="0" y="54" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="12" font-weight="400" fill="#A1A1A1" letter-spacing="-0.1">Bloomberg-style market terminal.</text>
+      <text x="0" y="88" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#525252" letter-spacing="1.6">NEXT.JS &#183; WEBSOCKET &#183; CANVAS</text>
     </g>
   </g>
 
   <g transform="translate(680, 160)">
-    <rect width="276" height="128" rx="12" fill="#22201D" stroke="#F5F1E8" stroke-opacity="0.06"/>
+    <rect width="276" height="128" rx="12" fill="#141414" stroke="#FFFFFF" stroke-opacity="0.06"/>
     <rect x="0" y="0" width="276" height="1" fill="url(#wLine)"/>
     <g transform="translate(20, 24)">
-      <rect x="0" y="-12" width="76" height="20" rx="5" fill="url(#tagTerra)"/>
-      <text x="12" y="2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#E8A27C" letter-spacing="1.5">RESEARCH</text>
-      <text x="0" y="30" font-family="ui-serif, Charter, Georgia, serif" font-size="18" font-weight="500" fill="#F5F1E8" letter-spacing="-0.4">QUIC CDN Sim</text>
-      <text x="0" y="54" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="12" font-weight="400" fill="#A69B88" letter-spacing="-0.1">HTTP/3 vs HTTP/2 video CDN bench.</text>
-      <text x="0" y="88" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#7A6E5E" letter-spacing="1.6">GO &#183; QUIC &#183; DOCKER &#183; NETEM</text>
+      <rect x="0" y="-12" width="76" height="20" rx="5" fill="url(#tagBright)"/>
+      <text x="12" y="2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#FAFAFA" letter-spacing="1.5">RESEARCH</text>
+      <text x="0" y="30" font-family="ui-serif, Charter, Georgia, serif" font-size="18" font-weight="500" fill="#FAFAFA" letter-spacing="-0.4">QUIC CDN Sim</text>
+      <text x="0" y="54" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="12" font-weight="400" fill="#A1A1A1" letter-spacing="-0.1">HTTP/3 vs HTTP/2 video CDN bench.</text>
+      <text x="0" y="88" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#525252" letter-spacing="1.6">GO &#183; QUIC &#183; DOCKER &#183; NETEM</text>
     </g>
   </g>
 
   <g transform="translate(972, 160)">
-    <rect width="276" height="128" rx="12" fill="#22201D" stroke="#F5F1E8" stroke-opacity="0.06"/>
+    <rect width="276" height="128" rx="12" fill="#141414" stroke="#FFFFFF" stroke-opacity="0.06"/>
     <rect x="0" y="0" width="276" height="1" fill="url(#wLine)"/>
     <g transform="translate(20, 24)">
-      <rect x="0" y="-12" width="68" height="20" rx="5" fill="url(#tagSand)"/>
-      <text x="12" y="2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#D4BF9E" letter-spacing="1.5">SECURITY</text>
-      <text x="0" y="30" font-family="ui-serif, Charter, Georgia, serif" font-size="18" font-weight="500" fill="#F5F1E8" letter-spacing="-0.4">Sentinel</text>
-      <text x="0" y="54" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="12" font-weight="400" fill="#A69B88" letter-spacing="-0.1">Catches secrets and CVEs pre-ship.</text>
-      <text x="0" y="88" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#7A6E5E" letter-spacing="1.6">TYPESCRIPT &#183; STATIC ANALYSIS</text>
+      <rect x="0" y="-12" width="68" height="20" rx="5" fill="url(#tagDim)"/>
+      <text x="12" y="2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#A1A1A1" letter-spacing="1.5">SECURITY</text>
+      <text x="0" y="30" font-family="ui-serif, Charter, Georgia, serif" font-size="18" font-weight="500" fill="#FAFAFA" letter-spacing="-0.4">Sentinel</text>
+      <text x="0" y="54" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="12" font-weight="400" fill="#A1A1A1" letter-spacing="-0.1">Catches secrets and CVEs pre-ship.</text>
+      <text x="0" y="88" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#525252" letter-spacing="1.6">TYPESCRIPT &#183; STATIC ANALYSIS</text>
     </g>
   </g>
 
   <!-- Row 2 -->
   <g transform="translate(96, 304)">
-    <rect width="276" height="128" rx="12" fill="#22201D" stroke="#F5F1E8" stroke-opacity="0.06"/>
+    <rect width="276" height="128" rx="12" fill="#141414" stroke="#FFFFFF" stroke-opacity="0.06"/>
     <rect x="0" y="0" width="276" height="1" fill="url(#wLine)"/>
     <g transform="translate(20, 24)">
-      <rect x="0" y="-12" width="66" height="20" rx="5" fill="url(#tagTerra)"/>
-      <text x="12" y="2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#E8A27C" letter-spacing="1.5">SYSTEMS</text>
-      <text x="0" y="30" font-family="ui-serif, Charter, Georgia, serif" font-size="18" font-weight="500" fill="#F5F1E8" letter-spacing="-0.4">Cubit Streaming</text>
-      <text x="0" y="54" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="12" font-weight="400" fill="#A69B88" letter-spacing="-0.1">Low-latency microscope video pipeline.</text>
-      <text x="0" y="88" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#7A6E5E" letter-spacing="1.6">C++ &#183; GSTREAMER &#183; RTP</text>
+      <rect x="0" y="-12" width="66" height="20" rx="5" fill="url(#tagBright)"/>
+      <text x="12" y="2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#FAFAFA" letter-spacing="1.5">SYSTEMS</text>
+      <text x="0" y="30" font-family="ui-serif, Charter, Georgia, serif" font-size="18" font-weight="500" fill="#FAFAFA" letter-spacing="-0.4">Cubit Streaming</text>
+      <text x="0" y="54" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="12" font-weight="400" fill="#A1A1A1" letter-spacing="-0.1">Low-latency microscope video pipeline.</text>
+      <text x="0" y="88" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#525252" letter-spacing="1.6">C++ &#183; GSTREAMER &#183; RTP</text>
     </g>
   </g>
 
   <g transform="translate(388, 304)">
-    <rect width="276" height="128" rx="12" fill="#22201D" stroke="#F5F1E8" stroke-opacity="0.06"/>
+    <rect width="276" height="128" rx="12" fill="#141414" stroke="#FFFFFF" stroke-opacity="0.06"/>
     <rect x="0" y="0" width="276" height="1" fill="url(#wLine)"/>
     <g transform="translate(20, 24)">
-      <rect x="0" y="-12" width="82" height="20" rx="5" fill="url(#tagSand)"/>
-      <text x="12" y="2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#D4BF9E" letter-spacing="1.5">AI AGENTS</text>
-      <text x="0" y="30" font-family="ui-serif, Charter, Georgia, serif" font-size="18" font-weight="500" fill="#F5F1E8" letter-spacing="-0.4">agentlab</text>
-      <text x="0" y="54" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="12" font-weight="400" fill="#A69B88" letter-spacing="-0.1">Multi-model agent eval harness.</text>
-      <text x="0" y="88" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#7A6E5E" letter-spacing="1.6">PYTHON &#183; FASTAPI &#183; SQLITE</text>
+      <rect x="0" y="-12" width="82" height="20" rx="5" fill="url(#tagDim)"/>
+      <text x="12" y="2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#A1A1A1" letter-spacing="1.5">AI AGENTS</text>
+      <text x="0" y="30" font-family="ui-serif, Charter, Georgia, serif" font-size="18" font-weight="500" fill="#FAFAFA" letter-spacing="-0.4">agentlab</text>
+      <text x="0" y="54" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="12" font-weight="400" fill="#A1A1A1" letter-spacing="-0.1">Multi-model agent eval harness.</text>
+      <text x="0" y="88" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#525252" letter-spacing="1.6">PYTHON &#183; FASTAPI &#183; SQLITE</text>
     </g>
   </g>
 
   <g transform="translate(680, 304)">
-    <rect width="276" height="128" rx="12" fill="#22201D" stroke="#F5F1E8" stroke-opacity="0.06"/>
+    <rect width="276" height="128" rx="12" fill="#141414" stroke="#FFFFFF" stroke-opacity="0.06"/>
     <rect x="0" y="0" width="276" height="1" fill="url(#wLine)"/>
     <g transform="translate(20, 24)">
-      <rect x="0" y="-12" width="78" height="20" rx="5" fill="url(#tagTerra)"/>
-      <text x="12" y="2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#E8A27C" letter-spacing="1.5">DEVTOOLS</text>
-      <text x="0" y="30" font-family="ui-serif, Charter, Georgia, serif" font-size="18" font-weight="500" fill="#F5F1E8" letter-spacing="-0.4">context-surgeon</text>
-      <text x="0" y="54" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="12" font-weight="400" fill="#A69B88" letter-spacing="-0.1">Audit Claude Code context before you type.</text>
-      <text x="0" y="88" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#7A6E5E" letter-spacing="1.6">TYPESCRIPT &#183; CLAUDE CODE</text>
+      <rect x="0" y="-12" width="78" height="20" rx="5" fill="url(#tagBright)"/>
+      <text x="12" y="2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#FAFAFA" letter-spacing="1.5">DEVTOOLS</text>
+      <text x="0" y="30" font-family="ui-serif, Charter, Georgia, serif" font-size="18" font-weight="500" fill="#FAFAFA" letter-spacing="-0.4">context-surgeon</text>
+      <text x="0" y="54" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="12" font-weight="400" fill="#A1A1A1" letter-spacing="-0.1">Audit Claude Code context before you type.</text>
+      <text x="0" y="88" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#525252" letter-spacing="1.6">TYPESCRIPT &#183; CLAUDE CODE</text>
     </g>
   </g>
 
   <g transform="translate(972, 304)">
-    <rect width="276" height="128" rx="12" fill="#22201D" stroke="#F5F1E8" stroke-opacity="0.06"/>
+    <rect width="276" height="128" rx="12" fill="#141414" stroke="#FFFFFF" stroke-opacity="0.06"/>
     <rect x="0" y="0" width="276" height="1" fill="url(#wLine)"/>
     <g transform="translate(20, 24)">
-      <rect x="0" y="-12" width="74" height="20" rx="5" fill="url(#tagSand)"/>
-      <text x="12" y="2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#D4BF9E" letter-spacing="1.5">PLATFORM</text>
-      <text x="0" y="30" font-family="ui-serif, Charter, Georgia, serif" font-size="18" font-weight="500" fill="#F5F1E8" letter-spacing="-0.4">pluginforge</text>
-      <text x="0" y="54" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="12" font-weight="400" fill="#A69B88" letter-spacing="-0.1">Web Worker sandbox, typed RPC, 12 tests.</text>
-      <text x="0" y="88" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#7A6E5E" letter-spacing="1.6">TYPESCRIPT &#183; WEB WORKERS</text>
+      <rect x="0" y="-12" width="74" height="20" rx="5" fill="url(#tagDim)"/>
+      <text x="12" y="2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#A1A1A1" letter-spacing="1.5">PLATFORM</text>
+      <text x="0" y="30" font-family="ui-serif, Charter, Georgia, serif" font-size="18" font-weight="500" fill="#FAFAFA" letter-spacing="-0.4">pluginforge</text>
+      <text x="0" y="54" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="12" font-weight="400" fill="#A1A1A1" letter-spacing="-0.1">Web Worker sandbox, typed RPC, 12 tests.</text>
+      <text x="0" y="88" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#525252" letter-spacing="1.6">TYPESCRIPT &#183; WEB WORKERS</text>
     </g>
   </g>
 
-  <!-- Row 3 (centered: 3 tiles, x = 210, 502, 794) -->
+  <!-- Row 3 (centered: x = 210, 502, 794) -->
   <g transform="translate(210, 448)">
-    <rect width="276" height="128" rx="12" fill="#22201D" stroke="#F5F1E8" stroke-opacity="0.06"/>
+    <rect width="276" height="128" rx="12" fill="#141414" stroke="#FFFFFF" stroke-opacity="0.06"/>
     <rect x="0" y="0" width="276" height="1" fill="url(#wLine)"/>
     <g transform="translate(20, 24)">
-      <rect x="0" y="-12" width="58" height="20" rx="5" fill="url(#tagTerra)"/>
-      <text x="12" y="2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#E8A27C" letter-spacing="1.5">COLLAB</text>
-      <text x="0" y="30" font-family="ui-serif, Charter, Georgia, serif" font-size="18" font-weight="500" fill="#F5F1E8" letter-spacing="-0.4">canvaslive</text>
-      <text x="0" y="54" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="12" font-weight="400" fill="#A69B88" letter-spacing="-0.1">Real-time multiplayer whiteboard, OT-proven.</text>
-      <text x="0" y="88" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#7A6E5E" letter-spacing="1.6">TYPESCRIPT &#183; REACT &#183; WEBSOCKET</text>
+      <rect x="0" y="-12" width="58" height="20" rx="5" fill="url(#tagBright)"/>
+      <text x="12" y="2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#FAFAFA" letter-spacing="1.5">COLLAB</text>
+      <text x="0" y="30" font-family="ui-serif, Charter, Georgia, serif" font-size="18" font-weight="500" fill="#FAFAFA" letter-spacing="-0.4">canvaslive</text>
+      <text x="0" y="54" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="12" font-weight="400" fill="#A1A1A1" letter-spacing="-0.1">Real-time multiplayer whiteboard, OT-proven.</text>
+      <text x="0" y="88" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#525252" letter-spacing="1.6">TYPESCRIPT &#183; REACT &#183; WEBSOCKET</text>
     </g>
   </g>
 
   <g transform="translate(502, 448)">
-    <rect width="276" height="128" rx="12" fill="#22201D" stroke="#F5F1E8" stroke-opacity="0.06"/>
+    <rect width="276" height="128" rx="12" fill="#141414" stroke="#FFFFFF" stroke-opacity="0.06"/>
     <rect x="0" y="0" width="276" height="1" fill="url(#wLine)"/>
     <g transform="translate(20, 24)">
-      <rect x="0" y="-12" width="90" height="20" rx="5" fill="url(#tagSand)"/>
-      <text x="12" y="2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#D4BF9E" letter-spacing="1.5">AUTOMATION</text>
-      <text x="0" y="30" font-family="ui-serif, Charter, Georgia, serif" font-size="18" font-weight="500" fill="#F5F1E8" letter-spacing="-0.4">JobApplier</text>
-      <text x="0" y="54" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="12" font-weight="400" fill="#A69B88" letter-spacing="-0.1">AI resume tailoring, LaTeX, browser bot.</text>
-      <text x="0" y="88" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#7A6E5E" letter-spacing="1.6">PYTHON &#183; LATEX &#183; PLAYWRIGHT</text>
+      <rect x="0" y="-12" width="90" height="20" rx="5" fill="url(#tagDim)"/>
+      <text x="12" y="2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#A1A1A1" letter-spacing="1.5">AUTOMATION</text>
+      <text x="0" y="30" font-family="ui-serif, Charter, Georgia, serif" font-size="18" font-weight="500" fill="#FAFAFA" letter-spacing="-0.4">JobApplier</text>
+      <text x="0" y="54" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="12" font-weight="400" fill="#A1A1A1" letter-spacing="-0.1">AI resume tailoring, LaTeX, browser bot.</text>
+      <text x="0" y="88" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#525252" letter-spacing="1.6">PYTHON &#183; LATEX &#183; PLAYWRIGHT</text>
     </g>
   </g>
 
   <g transform="translate(794, 448)">
-    <rect width="276" height="128" rx="12" fill="#22201D" stroke="#F5F1E8" stroke-opacity="0.06"/>
+    <rect width="276" height="128" rx="12" fill="#141414" stroke="#FFFFFF" stroke-opacity="0.06"/>
     <rect x="0" y="0" width="276" height="1" fill="url(#wLine)"/>
     <g transform="translate(20, 24)">
-      <rect x="0" y="-12" width="62" height="20" rx="5" fill="url(#tagTerra)"/>
-      <text x="12" y="2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#E8A27C" letter-spacing="1.5">DESIGN</text>
-      <text x="0" y="30" font-family="ui-serif, Charter, Georgia, serif" font-size="18" font-weight="500" fill="#F5F1E8" letter-spacing="-0.4">Portfolio</text>
-      <text x="0" y="54" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="12" font-weight="400" fill="#A69B88" letter-spacing="-0.1">Hand-written HTML/CSS, no framework.</text>
-      <text x="0" y="88" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#7A6E5E" letter-spacing="1.6">HTML &#183; CSS &#183; VANILLA JS</text>
+      <rect x="0" y="-12" width="62" height="20" rx="5" fill="url(#tagBright)"/>
+      <text x="12" y="2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#FAFAFA" letter-spacing="1.5">DESIGN</text>
+      <text x="0" y="30" font-family="ui-serif, Charter, Georgia, serif" font-size="18" font-weight="500" fill="#FAFAFA" letter-spacing="-0.4">Portfolio</text>
+      <text x="0" y="54" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="12" font-weight="400" fill="#A1A1A1" letter-spacing="-0.1">Hand-written HTML/CSS, no framework.</text>
+      <text x="0" y="88" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#525252" letter-spacing="1.6">HTML &#183; CSS &#183; VANILLA JS</text>
     </g>
   </g>
 </svg>
