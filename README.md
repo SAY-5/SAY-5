@@ -18,5 +18,9 @@
 </p>
 
 <p align="center">
+  <img src="./ribbon.svg" alt="A year of contributions, drawn as a ribbon" width="100%"/>
+</p>
+
+<p align="center">
   <sub>Open to building hard systems with thoughtful people. &nbsp;·&nbsp; <a href="mailto:saiasish.cnp@gmail.com">Let's talk →</a></sub>
 </p>

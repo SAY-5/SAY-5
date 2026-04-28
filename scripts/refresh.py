@@ -1,16 +1,24 @@
 #!/usr/bin/env python3
-"""Regenerate metrics.svg and activity.svg from live GitHub API data.
+"""Regenerate metrics.svg and ribbon.svg from live GitHub API data.
 
 Claude design palette:
-  bg #1A1714 · cards #22201D · accent #D97757 (terracotta) · sand #BBA68A
+  bg #1A1714 · cards #22201D · terracotta #D97757 · sand #BBA68A
   cream #F5F1E8 text, warm-muted #A69B88, dim #7A6E5E
+
+ribbon.svg renders the year of contribution data as an organic flowing
+curve. Each day's contribution count drives the local thickness of the
+ribbon. Cubic-bezier smoothing across daily points; gradient fill.
 """
 import json
+import math
 import subprocess
 from pathlib import Path
 
 USER = "SAY-5"
 REPO_ROOT = Path(__file__).resolve().parent.parent
+
+MONTHS = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN",
+          "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
 
 
 def gh(*args):
@@ -105,101 +113,134 @@ def render_metrics(m):
     return METRICS_TEMPLATE.format(**m)
 
 
-def level_color(count):
-    if count == 0:
-        return "#241F1B"
-    if count <= 2:
-        return "#4A3224"
-    if count <= 9:
-        return "#8C4D2F"
-    if count <= 30:
-        return "#C06339"
-    return "#E8A27C"
+def cubic_path_through(coords):
+    """Smooth path through points using cubic beziers with shared control x."""
+    if not coords:
+        return ""
+    if len(coords) == 1:
+        return f"M {coords[0][0]:.2f} {coords[0][1]:.2f}"
+    parts = [f"M {coords[0][0]:.2f} {coords[0][1]:.2f}"]
+    for i in range(1, len(coords)):
+        x0, y0 = coords[i - 1]
+        x1, y1 = coords[i]
+        cx = (x0 + x1) / 2
+        parts.append(f"C {cx:.2f} {y0:.2f} {cx:.2f} {y1:.2f} {x1:.2f} {y1:.2f}")
+    return " ".join(parts)
 
 
-MONTHS = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN",
-          "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
+def render_ribbon(cal):
+    days = []
+    for week in cal["weeks"]:
+        for day in week["contributionDays"]:
+            days.append((day["date"], day["contributionCount"]))
 
-
-def render_activity(cal):
-    weeks = cal["weeks"]
     total = cal["totalContributions"]
+    if not days:
+        return ""
 
-    cell = 13
-    gap = 3
-    stride = cell + gap
+    n = len(days)
+    max_count = max(d[1] for d in days) or 1
 
-    left = 96
-    top = 160
     width = 1280
-    grid_h = 7 * stride
-    height = top + grid_h + 80
+    height = 380
+    L = 96
+    R = 96
+    chart_w = width - L - R
+    top_y = 168
+    chart_h = 152
+    center_y = top_y + chart_h / 2
+    max_half = chart_h / 2 - 6
+    min_half = 1.5
 
-    cells = []
-    for wi, week in enumerate(weeks):
-        for di, day in enumerate(week["contributionDays"]):
-            x = left + wi * stride
-            y = top + di * stride
-            c = level_color(day["contributionCount"])
-            cells.append(
-                f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="3" fill="{c}"/>')
-    cells_svg = "\n  ".join(cells)
+    pts = []
+    for i, (date, count) in enumerate(days):
+        x = L + (i / (n - 1)) * chart_w if n > 1 else L + chart_w / 2
+        scaled = math.log(1 + count) / math.log(1 + max_count)
+        half_h = max(min_half, scaled * max_half)
+        pts.append((x, center_y - half_h, center_y + half_h))
 
-    months = []
-    last_month = None
-    for wi, week in enumerate(weeks):
-        first_day = week["contributionDays"][0]["date"]
-        m_idx = int(first_day[5:7]) - 1
-        if m_idx != last_month and wi < len(weeks) - 2:
-            x = left + wi * stride
-            months.append(
-                f'<text x="{x}" y="{top - 14}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" '
-                f'font-size="10" font-weight="500" fill="#A69B88" letter-spacing="1.8">{MONTHS[m_idx]}</text>')
-            last_month = m_idx
-    months_svg = "\n  ".join(months)
+    top_coords = [(p[0], p[1]) for p in pts]
+    bot_coords = [(p[0], p[2]) for p in reversed(pts)]
 
-    day_svgs = []
-    for di, label in [(1, "Mon"), (3, "Wed"), (5, "Fri")]:
-        y = top + di * stride + 10
-        day_svgs.append(
-            f'<text x="{left - 40}" y="{y}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" '
-            f'font-size="10" font-weight="500" fill="#A69B88" letter-spacing="1">{label}</text>')
-    days_svg = "\n  ".join(day_svgs)
+    top_path = cubic_path_through(top_coords)
+    bot_smooth = cubic_path_through(bot_coords)
+    if bot_smooth.startswith("M "):
+        bot_smooth = "L " + bot_smooth[2:]
+    full_path = f"{top_path} {bot_smooth} Z"
 
-    legend_y = top + grid_h + 32
-    legend_x_start = width - 96 - (5 * (cell + 3) + 80)
-    legend_colors = ["#241F1B", "#4A3224", "#8C4D2F", "#C06339", "#E8A27C"]
-    legend_svg = (
-        f'<text x="{legend_x_start}" y="{legend_y + 10}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" '
-        f'font-size="10" font-weight="500" fill="#A69B88" letter-spacing="1.8">LESS</text>'
+    month_x = []
+    last_m = None
+    for i, (date, _) in enumerate(days):
+        m_idx = int(date[5:7]) - 1
+        if m_idx != last_m:
+            x = L + (i / (n - 1)) * chart_w
+            month_x.append((x, MONTHS[m_idx]))
+            last_m = m_idx
+
+    month_svg = "\n  ".join(
+        f'<text x="{x:.1f}" y="{top_y + chart_h + 30:.1f}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" font-weight="500" fill="#7A6E5E" letter-spacing="1.8">{m}</text>'
+        for x, m in month_x
     )
-    for i, c in enumerate(legend_colors):
-        x = legend_x_start + 40 + i * (cell + 3)
-        legend_svg += (
-            f'<rect x="{x}" y="{legend_y}" width="{cell}" height="{cell}" rx="3" fill="{c}"/>'
+
+    # Faint daily tick marks below the ribbon for texture
+    ticks = []
+    for i, (date, count) in enumerate(days):
+        if count == 0:
+            continue
+        x = L + (i / (n - 1)) * chart_w
+        opacity = min(0.4, 0.06 + math.log(1 + count) / math.log(1 + max_count) * 0.34)
+        ticks.append(
+            f'<rect x="{x - 0.7:.2f}" y="{top_y + chart_h + 8:.1f}" width="1.4" height="6" fill="#D97757" fill-opacity="{opacity:.2f}"/>'
         )
-    more_x = legend_x_start + 40 + 5 * (cell + 3) + 4
-    legend_svg += (
-        f'<text x="{more_x}" y="{legend_y + 10}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" '
-        f'font-size="10" font-weight="500" fill="#A69B88" letter-spacing="1.8">MORE</text>'
-    )
+    ticks_svg = "\n  ".join(ticks)
 
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="{width}" height="{height}">
   <defs>
-    <pattern id="dotsA" width="40" height="40" patternUnits="userSpaceOnUse">
-      <circle cx="1" cy="1" r="1" fill="#F5F1E8" fill-opacity="0.03"/>
+    <linearGradient id="ribbonGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#A6896B" stop-opacity="0.85"/>
+      <stop offset="35%"  stop-color="#D97757" stop-opacity="0.95"/>
+      <stop offset="70%"  stop-color="#E8A27C" stop-opacity="0.92"/>
+      <stop offset="100%" stop-color="#F5C09B" stop-opacity="0.85"/>
+    </linearGradient>
+    <linearGradient id="ribbonShade" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#FFFFFF" stop-opacity="0.18"/>
+      <stop offset="50%"  stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.22"/>
+    </linearGradient>
+    <radialGradient id="rGlow" cx="50%" cy="60%" r="55%">
+      <stop offset="0%"   stop-color="#D97757" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#1A1714" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="rDots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#F5F1E8" fill-opacity="0.025"/>
     </pattern>
+    <filter id="rGlowF" x="-10%" y="-50%" width="120%" height="200%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
   </defs>
+
   <rect width="{width}" height="{height}" fill="#1A1714"/>
-  <rect width="{width}" height="{height}" fill="url(#dotsA)"/>
-  <g transform="translate(96, 60)">
-    <text x="0" y="0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#A69B88" letter-spacing="3.5">&#8212;&#8201;&#8201;&#8201;CONTRIBUTION ACTIVITY</text>
-    <text x="0" y="30" font-family="ui-serif, Charter, Georgia, serif" font-size="26" font-weight="500" fill="#F5F1E8" letter-spacing="-0.8">{total} contributions in the last year.</text>
+  <rect width="{width}" height="{height}" fill="url(#rDots)"/>
+  <rect width="{width}" height="{height}" fill="url(#rGlow)"/>
+
+  <line x1="96" y1="72" x2="1184" y2="72" stroke="#F5F1E8" stroke-opacity="0.08"/>
+
+  <g transform="translate(96, 54)" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" letter-spacing="3.5">
+    <text x="0" y="0" fill="#A69B88">&#8212;&#8201;&#8201;&#8201;CONTRIBUTION ACTIVITY</text>
+    <text x="1088" y="0" fill="#6C5F4E" text-anchor="end">LAST 365 DAYS &#183; AS A RIBBON</text>
   </g>
-  {months_svg}
-  {days_svg}
-  {cells_svg}
-  {legend_svg}
+
+  <text x="96" y="124" font-family="ui-serif, Charter, Georgia, serif" font-size="36" font-style="italic" font-weight="500" fill="#F5F1E8" letter-spacing="-1.2">{total} contributions, <tspan font-style="normal" font-size="22" fill="#7A6E5E" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif">drawn from {n} days of work.</tspan></text>
+
+  <line x1="96" y1="{center_y:.1f}" x2="1184" y2="{center_y:.1f}" stroke="#F5F1E8" stroke-opacity="0.05" stroke-dasharray="2 6"/>
+
+  <path d="{full_path}" fill="url(#ribbonGrad)" stroke="none" filter="url(#rGlowF)" opacity="0.55"/>
+  <path d="{full_path}" fill="url(#ribbonGrad)" stroke="none"/>
+  <path d="{full_path}" fill="url(#ribbonShade)" stroke="none"/>
+
+  {ticks_svg}
+
+  {month_svg}
 </svg>
 '''
 
@@ -208,6 +249,11 @@ def main():
     metrics = fetch_metrics()
     (REPO_ROOT / "metrics.svg").write_text(render_metrics(metrics))
     print(f"metrics.svg :: {metrics}")
+
+    cal = fetch_contributions()
+    (REPO_ROOT / "ribbon.svg").write_text(render_ribbon(cal))
+    print(f"ribbon.svg :: {cal['totalContributions']} contributions over "
+          f"{sum(len(w['contributionDays']) for w in cal['weeks'])} days")
 
 
 if __name__ == "__main__":
