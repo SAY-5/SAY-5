@@ -209,10 +209,6 @@ def main():
     (REPO_ROOT / "metrics.svg").write_text(render_metrics(metrics))
     print(f"metrics.svg :: {metrics}")
 
-    cal = fetch_contributions()
-    (REPO_ROOT / "activity.svg").write_text(render_activity(cal))
-    print(f"activity.svg :: {cal['totalContributions']} contributions, {len(cal['weeks'])} weeks")
-
 
 if __name__ == "__main__":
     main()

@@ -26,8 +26,8 @@
   <rect width="1280" height="620" fill="url(#wDots)"/>
 
   <g transform="translate(96, 60)">
-    <text x="0" y="0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#A69B88" letter-spacing="3.5">&#8212;&#8201;&#8201;&#8201;MORE PROJECTS</text>
-    <text x="0" y="30" font-family="ui-serif, Charter, Georgia, serif" font-size="26" font-weight="500" fill="#F5F1E8" letter-spacing="-0.8">Eleven more shipped from scratch.</text>
+    <text x="0" y="0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#A69B88" letter-spacing="3.5">&#8212;&#8201;&#8201;&#8201;PROJECTS</text>
+    <text x="0" y="30" font-family="ui-serif, Charter, Georgia, serif" font-size="26" font-weight="500" fill="#F5F1E8" letter-spacing="-0.8">Twelve shipped from scratch.</text>
   </g>
 
   <!-- Tile grid: 4 cols × 3 rows, tiles 276w × 128h, gap 16 -->
@@ -169,14 +169,16 @@
     </g>
   </g>
 
-  <!-- "More →" CTA tile -->
+  <!-- SpatialPathDB FLAGSHIP tile -->
   <g transform="translate(972, 448)">
-    <rect width="276" height="128" rx="12" fill="#1F1D1A" stroke="#D97757" stroke-opacity="0.25" stroke-dasharray="4 4"/>
-    <rect width="276" height="128" rx="12" fill="url(#moreGrad)"/>
-    <g transform="translate(20, 38)">
-      <text x="0" y="0" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" font-weight="500" fill="#D97757" letter-spacing="2.5">EXPLORE</text>
-      <text x="0" y="32" font-family="ui-serif, Charter, Georgia, serif" font-size="20" font-weight="500" fill="#F5F1E8" letter-spacing="-0.5">All repositories &#8594;</text>
-      <text x="0" y="60" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="11" font-weight="400" fill="#A69B88" letter-spacing="-0.1">Forks, experiments, OSS contributions.</text>
+    <rect width="276" height="128" rx="12" fill="#22201D" stroke="#D97757" stroke-opacity="0.35"/>
+    <rect x="0" y="0" width="276" height="1" fill="url(#wLine)"/>
+    <g transform="translate(20, 24)">
+      <rect x="0" y="-12" width="74" height="20" rx="5" fill="url(#tagTerra)"/>
+      <text x="12" y="2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#E8A27C" letter-spacing="1.5">FLAGSHIP</text>
+      <text x="0" y="30" font-family="ui-serif, Charter, Georgia, serif" font-size="18" font-weight="500" fill="#F5F1E8" letter-spacing="-0.4">SpatialPathDB</text>
+      <text x="0" y="54" font-family="ui-sans-serif, -apple-system, 'Inter', sans-serif" font-size="12" font-weight="400" fill="#A69B88" letter-spacing="-0.1">Hilbert-partitioned Postgres &#8212; 2.5&#215; viewport.</text>
+      <text x="0" y="88" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9" font-weight="500" fill="#7A6E5E" letter-spacing="1.6">PYTHON &#183; POSTGRESQL &#183; POSTGIS</text>
     </g>
   </g>
 </svg>

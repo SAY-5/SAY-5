@@ -19,7 +19,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Regenerate metrics.svg and activity.svg
+      - name: Regenerate metrics.svg
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 scripts/refresh.py
@@ -28,9 +28,9 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if ! git diff --quiet -- metrics.svg activity.svg; then
-            git add metrics.svg activity.svg
-            git commit -m "chore: weekly refresh of metrics + activity SVGs"
+          if ! git diff --quiet -- metrics.svg; then
+            git add metrics.svg
+            git commit -m "chore: weekly refresh of metrics.svg"
             git push
           else
             echo "No changes to commit."
