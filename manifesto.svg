@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 480" width="1280" height="480">
+  <defs>
+    <linearGradient id="quoteGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#737373"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="480" fill="#000000"/>
+
+  <text x="640" y="220" text-anchor="middle"
+        font-family="ui-serif, Charter, 'Iowan Old Style', 'Times New Roman', Georgia, serif"
+        font-size="68" font-style="italic" font-weight="400" fill="url(#quoteGrad)" letter-spacing="-1.5">I build systems</text>
+
+  <text x="640" y="310" text-anchor="middle"
+        font-family="ui-serif, Charter, 'Iowan Old Style', 'Times New Roman', Georgia, serif"
+        font-size="68" font-style="italic" font-weight="400" fill="url(#quoteGrad)" letter-spacing="-1.5">that shouldn&#8217;t break.</text>
+
+  <line x1="610" y1="372" x2="670" y2="372" stroke="#525252" stroke-width="1"/>
+
+  <text x="640" y="404" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif"
+        font-size="14" font-weight="500" fill="#737373" letter-spacing="2.5">A NOTE TO SELF</text>
+</svg>

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Regenerate metrics.svg from live GitHub API data.
 
-Pure monochrome palette:
-  bg #0A0A0A · cards #141414 · borders #262626
-  text #FAFAFA · secondary #A1A1A1 · muted #737373 · dim #525252
+Apple keynote palette:
+  pure black #000000  ·  white #FFFFFF  ·  silver #A1A1A6
+  muted #86868B  ·  dim #525252
 """
 import json
 import subprocess
@@ -57,38 +57,33 @@ def fetch_metrics():
     }
 
 
-METRICS_TEMPLATE = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 180" width="1280" height="180">
+METRICS_TEMPLATE = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 540" width="1280" height="540">
   <defs>
-    <pattern id="mDots" width="40" height="40" patternUnits="userSpaceOnUse">
-      <circle cx="1" cy="1" r="1" fill="#FFFFFF" fill-opacity="0.025"/>
-    </pattern>
+    <linearGradient id="bigNumGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#525252"/>
+    </linearGradient>
   </defs>
-  <rect width="1280" height="180" fill="#0A0A0A"/>
-  <rect width="1280" height="180" fill="url(#mDots)"/>
-  <line x1="0" y1="0.5" x2="1280" y2="0.5" stroke="#FFFFFF" stroke-opacity="0.08"/>
-  <line x1="0" y1="179.5" x2="1280" y2="179.5" stroke="#FFFFFF" stroke-opacity="0.08"/>
 
-  <g transform="translate(96, 44)">
-    <text x="0" y="0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="500" fill="#A1A1A1" letter-spacing="3.5">&#8212;&#8201;&#8201;&#8201;GITHUB ACTIVITY</text>
-  </g>
+  <rect width="1280" height="540" fill="#000000"/>
 
-  <g font-family="ui-serif, Charter, Georgia, serif" font-size="52" font-weight="500" fill="#FAFAFA" letter-spacing="-2">
-    <text x="96" y="130">{prs}</text>
-    <text x="340" y="130">{repos}</text>
-    <text x="630" y="130">{commits}</text>
-    <text x="930" y="130">{originals}</text>
-  </g>
+  <text x="640" y="120" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif"
+        font-size="14" font-weight="500" fill="#86868B" letter-spacing="3">A YEAR IN OPEN SOURCE</text>
 
-  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" font-weight="500" fill="#525252" letter-spacing="2">
-    <text x="96"  y="150">PRS MERGED</text>
-    <text x="340" y="150">REPOSITORIES</text>
-    <text x="630" y="150">COMMITS</text>
-    <text x="930" y="150">ORIGINAL PROJECTS</text>
-  </g>
+  <text x="640" y="320" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif"
+        font-size="240" font-weight="600" fill="url(#bigNumGrad)" letter-spacing="-12">{prs}</text>
 
-  <line x1="304" y1="84" x2="304" y2="154" stroke="#FFFFFF" stroke-opacity="0.06"/>
-  <line x1="594" y1="84" x2="594" y2="154" stroke="#FFFFFF" stroke-opacity="0.06"/>
-  <line x1="894" y1="84" x2="894" y2="154" stroke="#FFFFFF" stroke-opacity="0.06"/>
+  <text x="640" y="380" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif"
+        font-size="32" font-weight="400" fill="#FFFFFF" letter-spacing="-0.6">pull requests merged.</text>
+
+  <text x="640" y="430" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif"
+        font-size="17" font-weight="400" fill="#86868B" letter-spacing="-0.2">Across {repos} repositories. {commits} commits authored. {originals} original projects shipped solo.</text>
+
+  <line x1="600" y1="480" x2="680" y2="480" stroke="#525252" stroke-width="1"/>
 </svg>
 '''
 
