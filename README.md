@@ -27,14 +27,9 @@ I'm Sai Asish, a Software Engineer who just finished his Master's in Computer Sc
 - 🧮 Page Count: <img src="https://visitor-badge.laobi.icu/badge?page_id=SAY-5">
 - 🗰  Mood Meter: <img src="https://img.shields.io/badge/-🚀%20Mood:%20Building-black?">
 
-## 🎵 < Now Playing />
-
-<table width=100%>
-  <tr>
-    <td><img src="https://spotify-github-profile.kittinanx.com/api/view?uid=saiasish&cover_image=true&theme=default&show_offline=false&background_color=121212&interchange=true&bar_color=53b14f&bar_color_cover=true" height=400 width=100% display=block></td>
-    <td><img src="https://quotes-github-readme.vercel.app/api?type=vertical&theme=dark"  display=block width=100% height=390 alt="2" display=block></td>
-   </tr>
-</table>
+<p align="center">
+  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark" alt="random dev quote">
+</p>
 
 ## ⚡ < Technologies />
 <p align="center">
@@ -73,19 +68,3 @@ I'm Sai Asish, a Software Engineer who just finished his Master's in Computer Sc
 <br><br>
 <img src="https://github-readme-streak-stats.herokuapp.com/?user=SAY-5&theme=merko">
 </p>
-<table>
-  <tr>
-    <td><img src="https://github-readme-stats.vercel.app/api?username=SAY-5&theme=dark&show_icons=true&include_all_commits=true&count_private=true"  display=block width=100% height=auto alt="1"></td>
-    <td><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=SAY-5&theme=dark&layout=compact&hide=Jupyter%20Notebook"  display=block height=190 align="center" alt="2"></td>
-   </tr>
-</table>
-
-<table>
-  <tr>
-    <td><img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=SAY-5&theme=solarized_dark"  display=block width=100% height=auto alt="1"></td>
-   </tr>
-   <tr>
-      <td><img src="https://activity-graph.herokuapp.com/graph?username=SAY-5&bg_color=073642&color=859900&line=006400&point=35aea1&area=true" display=block width=100% height=auto alt="2"></td>
-  </td>
-  </tr>
-</table>
