@@ -20,7 +20,7 @@ I'm Sai Asish, a Software Engineer who just finished his Master's in Computer Sc
 - 🌱 I'm currently exploring large-scale open-source contributions
 - 💬 Talk to me about rock climbing, thriller films, and walking new cities
 - 😄 Pronouns: He/Him
-- 📝 MS in Computer Science from [Stony Brook University](https://www.stonybrook.edu/), B.Tech from [VIT Chennai](https://chennai.vit.ac.in/)
+- 📝 MS in Computer Science from [Stony Brook University](https://www.stonybrook.edu/), B.Tech from [VIT Vellore](https://chennai.vit.ac.in/)
 - Till May 4, 2026 idea was to volumize solving problems and filing PRs on a broad scale and see where AI is Lagging, breaking the chain in logic, speed and quality. From Today (May 5,2026) focus and Idea has been shifted to Quality > Volume, sorry for all the PRs that were duplicates, unresolved and broken unit tests that were not passing. I am trying to use my skills, thought processes and AI to effectively triage issues and resolve them for OSS.
 - 👯 We can connect on [LinkedIn](https://www.linkedin.com/in/saiasishy/) for collaboration
 - ⚡ Fun fact: I rock climb on weekends ☄️
