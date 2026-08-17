@@ -1,70 +1,36 @@
-# Hello World! <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" height="21">
+# Sai Asish Y
 
-<h3><i>Spare some time to take a look at my <a href="https://sayportfolio.vercel.app/">portfolio</a>!</i></h3>
+Software engineer. Distributed systems, low latency infrastructure, databases.
 
-# About myself
+[![Every public repo as one object](https://sayportfolio.vercel.app/og.png)](https://sayportfolio.vercel.app/)
 
-## "Stay hungry. Stay foolish." -Steve Jobs 🚀
+I finished an MS in Computer Science at Stony Brook University, and a B.Tech before that at VIT. I have worked in two research labs (CUBIT and the Data Management and Biomedical Analytics Lab) and, earlier, at Nokia. Most of what I build is backend and infrastructure code: queues, schedulers, storage engines, and the tools that keep them honest. I am looking for SDE and SWE roles.
 
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?color=18A4F7&size=40&width=900&height=100&lines=Hello+there!)](https://git.io/typing-svg)
+There are 153 public repos on this account. The portfolio lays them out as one object and every project has a write-up; most have a demo that runs in the browser.
 
-I'm Sai Asish, a Software Engineer who just finished his Master's in Computer Science at Stony Brook University. I'm passionate about full-stack engineering, performance optimization, and building software that real people use. I've shipped at scale across research labs (CUBIT and the Data Management & Biomedical Analytics Lab) and earlier at Nokia, and I've contributed merged pull requests to 150+ open source projects across the JavaScript, Python, Go, and Rust ecosystems. I am currently looking for SDE/ SWE New Grad / FTE roles and I am open to work. Also, I'm an open-source aficionado who relishes collaborating on hard engineering problems. Feel free to connect with me here:
+- Portfolio: https://sayportfolio.vercel.app
+- Demos: https://showcases-lime.vercel.app
+- LinkedIn: https://www.linkedin.com/in/saiasishy/
+- Email: saiasish.cnp@gmail.com
 
-[![Linkedin Badge](https://img.shields.io/badge/-saiasishy-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/saiasishy/)](https://www.linkedin.com/in/saiasishy/)
-[![Portfolio Badge](https://img.shields.io/badge/-portfolio-orange?style=flat-square&logo=vercel&logoColor=white&link=https://sayportfolio.vercel.app/)](https://sayportfolio.vercel.app/)
-[![Gmail Badge](https://img.shields.io/badge/-saiasish.cnp@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:saiasish.cnp@gmail.com)](mailto:saiasish.cnp@gmail.com)
-[![GitHub Badge](https://img.shields.io/badge/-SAY--5-181717?style=flat-square&logo=github&logoColor=white&link=https://github.com/SAY-5)](https://github.com/SAY-5)
+## Start with these
 
-### 🤵 < About Me />
-- 🤔 I use daily ```.py```, ```.go```, ```.cpp```, ```.ts```
-- 🌱 I'm currently exploring large-scale open-source contributions
-- 💬 Talk to me about rock climbing, thriller films, and walking new cities
-- 😄 Pronouns: He/Him
-- 📝 MS in Computer Science from [Stony Brook University](https://www.stonybrook.edu/), B.Tech from [VIT Vellore](https://chennai.vit.ac.in/)
-- Till May 4, 2026 idea was to volumize solving problems and filing PRs on a broad scale and see where AI is Lagging, breaking the chain in logic, speed and quality. From Today (May 5,2026) focus and Idea has been shifted to Quality > Volume, sorry for all the PRs that were duplicates, unresolved and broken unit tests that were not passing. I am trying to use my skills, thought processes and AI to effectively triage issues and resolve them for OSS.
-- 👯 We can connect on [LinkedIn](https://www.linkedin.com/in/saiasishy/) for collaboration
-- ⚡ Fun fact: I rock climb on weekends ☄️
-- 🧮 Page Count: <img src="https://visitor-badge.laobi.icu/badge?page_id=SAY-5">
-- 🗰  Mood Meter: <img src="https://img.shields.io/badge/-🚀%20Mood:%20Building-black?">
+- **Scan preflight** (Go): Preflight checks and bed orchestration for a research microPET scanner. [Write-up](https://sayportfolio.vercel.app/p/scanguard) · [Repo](https://github.com/SAY-5/scanguard)
+- **Cutover** (Java): Strangler-fig gateway and phased cutover for a Spring Boot monolith. [Write-up](https://sayportfolio.vercel.app/p/cloudshift) · [Repo](https://github.com/SAY-5/cloudshift)
+- **Concierge** (Python): Customer-operations agent that resolves requests or hands off to a human. [Write-up](https://sayportfolio.vercel.app/p/agentdesk) · [Repo](https://github.com/SAY-5/agentdesk)
+- **Kanban board** (Java): Collaborative Kanban board with conflict resolution over WebSocket. [Write-up](https://sayportfolio.vercel.app/p/taskboard) · [Repo](https://github.com/SAY-5/taskboard)
+- **Storefront services** (Java): Spring Boot e-commerce services behind a REST gateway, one database each. [Write-up](https://sayportfolio.vercel.app/p/shopflow) · [Repo](https://github.com/SAY-5/shopflow)
+- **Report card** (Python): Learning-analytics dashboard with hand-rolled D3 charts over SQL aggregation. [Write-up](https://sayportfolio.vercel.app/p/gradeview) · [Repo](https://github.com/SAY-5/gradeview)
+- **Symbol graph** (Go): Go AST symbol and reference graph, served over GraphQL. [Write-up](https://sayportfolio.vercel.app/p/codelens) · [Repo](https://github.com/SAY-5/codelens)
+- **Sparring partner** (Java): Adaptive practice with Elo-style difficulty and per-skill mastery tracking. [Write-up](https://sayportfolio.vercel.app/p/learnloop) · [Repo](https://github.com/SAY-5/learnloop)
+- **Interlock** (Go): Scan sequencer that verifies bed and detector state before every capture. [Write-up](https://sayportfolio.vercel.app/p/scan-sequencer) · [Repo](https://github.com/SAY-5/scan-sequencer)
+- **Prime suspect** (Go): Diagnostic CLI that ranks an incident's root cause with its evidence. [Write-up](https://sayportfolio.vercel.app/p/diagkit) · [Repo](https://github.com/SAY-5/diagkit)
+- **Content-addressed backup** (C++): Content-addressed backup with parallel verified restore across simulated nodes. [Write-up](https://sayportfolio.vercel.app/p/snapvault) · [Repo](https://github.com/SAY-5/snapvault)
 
-<p align="center">
-  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark" alt="random dev quote">
-</p>
+## Open source
 
-## ⚡ < Technologies />
-<p align="center">
-<img src="https://img.shields.io/badge/-JavaScript-black?style=flat-square&logo=javascript">
-<img src="https://img.shields.io/badge/-TypeScript-black?style=flat-square&logo=typescript">
-<img src="https://img.shields.io/badge/-Python-black?style=flat-square&logo=Python">
-<img src="https://img.shields.io/badge/-Go-black?style=flat-square&logo=go">
-<img src="https://img.shields.io/badge/-Rust-black?style=flat-square&logo=rust">
-<img src="https://img.shields.io/badge/-C++-black?style=flat-square&logo=cplusplus">
-<img src="https://img.shields.io/badge/-Java-black?style=flat-square&logo=java">
-<img src="https://img.shields.io/badge/-HTML5-black?style=flat-square&logo=html5&logoColor=white">
-<img src="https://img.shields.io/badge/-CSS3-black?style=flat-square&logo=css3">
-<img src="https://img.shields.io/badge/-Node.js-black?style=flat-square&logo=Node.js">
-<img src="https://img.shields.io/badge/-React-black?style=flat-square&logo=react">
-<img src="https://img.shields.io/badge/-Next.js-black?style=flat-square&logo=next.js">
-<img src="https://img.shields.io/badge/-Spring%20Boot-black?style=flat-square&logo=springboot">
-<img src="https://img.shields.io/badge/-FastAPI-black?style=flat-square&logo=fastapi">
-<img src="https://img.shields.io/badge/-PostgreSQL-black?style=flat-square&logo=postgresql">
-<img src="https://img.shields.io/badge/-MongoDB-black?style=flat-square&logo=mongodb">
-<img src="https://img.shields.io/badge/-Redis-black?style=flat-square&logo=Redis">
-<img src="https://img.shields.io/badge/-Kafka-black?style=flat-square&logo=apachekafka">
-<img src="https://img.shields.io/badge/-Prometheus-black?style=flat-square&logo=prometheus">
-<img src="https://img.shields.io/badge/-Grafana-black?style=flat-square&logo=grafana">
-<img src="https://img.shields.io/badge/-Docker-black?style=flat-square&logo=docker">
-<img src="https://img.shields.io/badge/-Kubernetes-black?style=flat-square&logo=kubernetes">
-<img src="https://img.shields.io/badge/-AWS-black?style=flat-square&logo=amazonaws">
-<img src="https://img.shields.io/badge/-GCP-black?style=flat-square&logo=googlecloud">
-<img src="https://img.shields.io/badge/-Git-black?style=flat-square&logo=git">
-<img src="https://img.shields.io/badge/-GitHub-black?style=flat-square&logo=github">
-<img src="https://img.shields.io/badge/-Linux-black?style=flat-square&logo=linux">
-</p>
+I have merged pull requests in 150+ open source projects across the JavaScript, Python, Go, and Rust ecosystems. Until May 2026 the idea was volume: file as many fixes as possible and see where the tooling breaks down. Since May 5, 2026 it is quality over volume, and I owe an apology for the duplicate and half-tested PRs from before that. These days I try to triage an issue properly, reproduce it, and land one clean fix.
 
-## 📈 < Statistics />
-<p align="center">
-<img src="https://github-profile-trophy.vercel.app/?username=SAY-5&theme=darkhub">
-<br><br>
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=SAY-5&theme=merko">
-</p>
+## Day to day
+
+Python, Go, C++, TypeScript. Postgres, Kafka, Redis, Docker, Kubernetes, AWS. Rock climbing on weekends, thriller films, walking new cities. He/him.
