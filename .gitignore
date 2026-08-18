@@ -1,1 +1,2 @@
-.ruff_cache/
+node_modules
+scripts/.cache
