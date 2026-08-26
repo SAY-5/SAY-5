@@ -31,7 +31,7 @@ Each card opens the write-up; every one of these has a demo that runs in the bro
 
 ## Open source
 
-1149 merged pull requests in projects outside this account across the JavaScript, Python, Go, and Rust ecosystems. Until May 2026 the approach was volume; since May 5, 2026 it is one issue at a time: reproduce it, fix it, test it, and land a single clean change. Apologies to the maintainers who dealt with duplicate or half-tested PRs before that.
+1166 merged pull requests in projects outside this account across the JavaScript, Python, Go, and Rust ecosystems. Until May 2026 the approach was volume; since May 5, 2026 it is one issue at a time: reproduce it, fix it, test it, and land a single clean change. Apologies to the maintainers who dealt with duplicate or half-tested PRs before that.
 
 ## Contributions
 
