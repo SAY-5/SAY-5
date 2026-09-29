@@ -1,8 +1,9 @@
 // Builds the SVG assets and README for the profile from the portfolio's project
-// data. Run with Node 22+ (type stripping is used to import projects.ts).
+// data, the GitHub API and data/recent-work.json. Run with Node 22+ (type
+// stripping is used to import projects.ts).
 //
-//   node scripts/build.mjs            # full build
-//   GITHUB_TOKEN=... node scripts/build.mjs   # also refreshes GitHub numbers
+//   GITHUB_TOKEN=... node scripts/build.mjs   # full build
+//   node scripts/build.mjs            # without a token the repository counts keep their last values
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -65,30 +66,99 @@ async function loadProjects() {
   return { projects: mod.projects, flagships: mod.flagshipProjects, categories: mod.categories };
 }
 
+const TODAY = new Date().toISOString().slice(0, 10);
+const TOKEN = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
+const API_HEADERS = { 'user-agent': 'profile-build', accept: 'application/vnd.github+json' };
+if (TOKEN) API_HEADERS.authorization = `Bearer ${TOKEN}`;
+
+async function api(route, init = {}) {
+  const r = await fetch(`https://api.github.com${route}`, { headers: API_HEADERS, ...init });
+  const body = await r.json().catch(() => null);
+  if (!r.ok) throw new Error(`${route.split('?')[0]} returned ${r.status}`);
+  return body;
+}
+
+// Each group of figures keeps the date it was taken. When a source does not
+// answer, the previous figures stay with their old date, so the page never
+// shows an old count as a current one.
 async function githubNumbers() {
-  const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
-  const headers = { 'user-agent': 'profile-build', accept: 'application/vnd.github+json' };
-  if (token) headers.authorization = `Bearer ${token}`;
   const cachePath = path.join(ASSETS, 'numbers.json');
-  const prev = fs.existsSync(cachePath) ? JSON.parse(fs.readFileSync(cachePath, 'utf8')) : null;
+  const prev = fs.existsSync(cachePath) ? JSON.parse(fs.readFileSync(cachePath, 'utf8')) : {};
+  const out = {
+    publicRepos: prev.publicRepos ?? null,
+    publicReposNotForks: prev.publicReposNotForks ?? null,
+    followers: prev.followers ?? null,
+    reposTaken: prev.reposTaken ?? null,
+    mergedPRs: prev.mergedPRs ?? null,
+    mergedPRsElsewhere: prev.mergedPRsElsewhere ?? null,
+    pullsTaken: prev.pullsTaken ?? prev.updated ?? null,
+    pullsQuery: `is:pr author:${USER} is:merged -user:${USER}`,
+    pullsNote: null,
+  };
   try {
-    const user = await (await fetch(`https://api.github.com/users/${USER}`, { headers })).json();
-    const merged = await (await fetch(`https://api.github.com/search/issues?q=is:pr+author:${USER}+is:merged&per_page=1`, { headers })).json();
-    const reposMerged = await (await fetch(`https://api.github.com/search/issues?q=is:pr+author:${USER}+is:merged+-user:${USER}&per_page=1`, { headers })).json();
-    if (typeof user.public_repos !== 'number' || typeof merged.total_count !== 'number') throw new Error('unexpected api shape');
-    const numbers = {
-      publicRepos: user.public_repos,
-      followers: user.followers,
-      mergedPRs: merged.total_count,
-      mergedPRsElsewhere: reposMerged.total_count,
-      updated: new Date().toISOString().slice(0, 10),
-    };
-    fs.writeFileSync(cachePath, JSON.stringify(numbers, null, 2) + '\n');
-    return numbers;
+    const user = await api(`/users/${USER}`);
+    if (typeof user.public_repos !== 'number') throw new Error('users API gave no public_repos');
+    if (!TOKEN) throw new Error('no token for the GraphQL repository count');
+    const query = `{ user(login: "${USER}") { repositories(privacy: PUBLIC, isFork: false) { totalCount } } }`;
+    const g = await api('/graphql', { method: 'POST', body: JSON.stringify({ query }) });
+    const notForks = g?.data?.user?.repositories?.totalCount;
+    if (typeof notForks !== 'number') throw new Error('GraphQL gave no repository count');
+    Object.assign(out, { publicRepos: user.public_repos, publicReposNotForks: notForks, followers: user.followers, reposTaken: TODAY });
   } catch (e) {
-    if (prev) return prev;
-    return { publicRepos: null, followers: null, mergedPRs: null, mergedPRsElsewhere: null, updated: null };
+    console.warn(`repository figures kept from ${out.reposTaken ?? 'no earlier build'}: ${e.message}`);
   }
+  const count = async (query) => {
+    const r = await api(`/search/issues?q=${encodeURIComponent(query)}&per_page=1`);
+    if (r.incomplete_results) throw new Error('GitHub search returned incomplete results');
+    if (typeof r.total_count !== 'number') throw new Error('GitHub search returned no count');
+    return r.total_count;
+  };
+  try {
+    const merged = await count(`is:pr author:${USER} is:merged`);
+    const elsewhere = await count(out.pullsQuery);
+    Object.assign(out, { mergedPRs: merged, mergedPRsElsewhere: elsewhere, pullsTaken: TODAY });
+  } catch (e) {
+    out.pullsNote = `${e.message.replace('/search/issues', 'GitHub search')} on ${TODAY}`;
+    console.warn(`pull request figures kept from ${out.pullsTaken ?? 'no earlier build'}: ${out.pullsNote}`);
+  }
+  fs.writeFileSync(cachePath, JSON.stringify(out, null, 2) + '\n');
+  return out;
+}
+
+// Recent releases. data/recent-work.json holds the repositories, one line for
+// each taken from its README or release notes, and where that line came from.
+// The release tag, its date and the description are read from GitHub at every
+// build; a repository that does not answer keeps its last known release.
+async function recentWork(data) {
+  const list = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'recent-work.json'), 'utf8'));
+  const cachePath = path.join(ASSETS, 'releases.json');
+  const prev = fs.existsSync(cachePath) ? JSON.parse(fs.readFileSync(cachePath, 'utf8')) : {};
+  const got = {};
+  for (const item of list) {
+    try {
+      const repo = await api(`/repos/${USER}/${item.repo}`);
+      const rel = await api(`/repos/${USER}/${item.repo}/releases/latest`);
+      got[item.repo] = { tag: rel.tag_name, released: rel.published_at.slice(0, 10), releaseUrl: rel.html_url, description: repo.description, checked: TODAY };
+    } catch (e) {
+      got[item.repo] = prev[item.repo] ?? null;
+      console.warn(`${item.repo}: release kept from ${got[item.repo]?.checked ?? 'no earlier build'}: ${e.message}`);
+    }
+  }
+  fs.writeFileSync(cachePath, JSON.stringify(got, null, 2) + '\n');
+  return list
+    .map((item, order) => {
+      const p = data.projects.find((q) => q.name === item.repo);
+      return {
+        repo: item.repo,
+        order,
+        title: p?.title || item.title || item.repo,
+        // The write-up when the portfolio has one, otherwise the repository.
+        href: p ? `${SITE}/p/${item.repo}` : `https://github.com/${USER}/${item.repo}`,
+        line: item.line || got[item.repo]?.description || '',
+        release: got[item.repo],
+      };
+    })
+    .sort((a, b) => (b.release?.released ?? '').localeCompare(a.release?.released ?? '') || a.order - b.order);
 }
 
 // ---------- fonts (outlines, so the SVGs render the same everywhere) ----------
@@ -210,7 +280,7 @@ ${textPath(F.s600, name, 52, 176, 84, C.paper, { tracking: -0.045 })}
 ${textPath(F.s400, 'Software engineer.', 56, 218, 20, C.dim)}
 ${textPath(F.s400, 'Distributed systems, low latency infrastructure, databases.', 56, 246, 20, C.dim)}
 ${textPath(F.s600, String(count), 52, 388, 72, C.paper, { tracking: -0.05 })}
-${textPath(F.s500, 'public repos,', 52 + measure(F.s600, String(count), 72, -0.05) + 16, 366, 15, C.dim)}
+${textPath(F.s500, 'projects in the catalog,', 52 + measure(F.s600, String(count), 72, -0.05) + 16, 366, 15, C.dim)}
 ${textPath(F.s500, 'one block each', 52 + measure(F.s600, String(count), 72, -0.05) + 16, 386, 15, C.dim)}
 ${textPath(F.s500, 'sayportfolio.vercel.app', 1148, 402, 13, C.faint, { anchor: 'end' })}
 <rect x="0.5" y="0.5" width="${W - 1}" height="${H - 1}" rx="22" fill="none" stroke="${C.line}"/>
@@ -234,49 +304,79 @@ ${textPath(F.s500, 'Write-up and demo', W - 32, H - 22, 12, C.faint, { anchor: '
 </svg>`;
 }
 
-function stats(F, data, numbers) {
-  const W = 1200, H = 300;
+// What the numbers card shows, as data, so the card and its alt text agree.
+function statsModel(data, numbers) {
   const cats = data.categories.map((label) => ({ label, count: data.projects.filter((p) => p.category === label).length })).filter((c) => c.count > 0).sort((a, b) => b.count - a.count);
-  const max = Math.max(...cats.map((c) => c.count));
+  const forks = numbers.publicRepos != null && numbers.publicReposNotForks != null ? numbers.publicRepos - numbers.publicReposNotForks : null;
   const metrics = [
-    { v: data.projects.length, l: 'public repos' },
-    { v: numbers.mergedPRsElsewhere ?? numbers.mergedPRs, l: "merged PRs, other projects" },
-    { v: data.flagships.length, l: "selected, with live demos" },
+    { v: numbers.publicReposNotForks, l: ['public repositories,', forks != null ? `not counting ${forks} forks` : 'not counting forks'] },
+    { v: numbers.mergedPRsElsewhere, l: ['merged pull requests in', 'projects outside this account'] },
+    { v: data.projects.length, l: ['projects in the', 'portfolio catalog'] },
+    { v: data.flagships.length, l: ['of them selected,', 'each with a live demo'] },
   ];
-  let out = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Numbers">
+  const r = numbers.reposTaken, p = numbers.pullsTaken;
+  let taken;
+  if (r && r === TODAY && p === TODAY && !numbers.pullsNote) taken = `Figures taken ${TODAY}`;
+  else {
+    taken = `Catalog ${TODAY}; repositories ${r ?? 'not taken'}; pull requests ${p ?? 'not taken'}`;
+    if (numbers.pullsNote) taken += ` (${numbers.pullsNote})`;
+  }
+  const n = (v) => (v == null ? 'n/a' : String(v));
+  const alt = `Numbers. ${taken}. ${n(metrics[0].v)} public repositories, not counting ${forks ?? 'the'} forks; ${n(metrics[1].v)} merged pull requests in projects outside this account; ${n(metrics[2].v)} projects in the portfolio catalog, ${n(metrics[3].v)} of them selected, each with a live demo. Catalog by category: ${cats.map((c) => `${c.label} ${c.count}`).join(', ')}.`;
+  return { cats, metrics, taken, alt, n };
+}
+
+function stats(F, data, numbers) {
+  const W = 1200, H = 336;
+  const { cats, metrics, taken, alt, n } = statsModel(data, numbers);
+  const max = Math.max(...cats.map((c) => c.count));
+  let out = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(alt)}">
 <rect x="0.5" y="0.5" width="${W - 1}" height="${H - 1}" rx="22" fill="${C.surface}" stroke="${C.line}"/>`;
+  // two by two on the left
   metrics.forEach((m, i) => {
-    const x = 44 + i * 236;
-    const val = m.v == null ? '–' : String(m.v);
-    out += textPath(F.s600, val, x, 96, 64, C.paper, { tracking: -0.05 });
-    out += textPath(F.s500, m.l, x + 2, 124, 13, C.faint);
+    const x = 44 + (i % 2) * 300;
+    const y = 96 + Math.floor(i / 2) * 128;
+    out += textPath(F.s600, n(m.v), x, y, 64, C.paper, { tracking: -0.05 });
+    m.l.forEach((line, j) => { out += textPath(F.s500, line, x + 2, y + 26 + j * 18, 13, C.faint); });
   });
-  // category rows on the right
-  const rx = 900, top = 44, rowH = 26;
+  // the catalog by category on the right
+  const rx = 900, top = 62, rowH = 28, trackW = 210;
+  out += textPath(F.s500, 'Portfolio catalog by category', rx, 40, 12, C.faint);
   cats.forEach((c, i) => {
     const y = top + i * rowH;
     out += textPath(F.s400, c.label, rx - 12, y + 12, 12.5, C.dim, { anchor: 'end' });
     const blocks = c.count;
-    const trackW = 210;
     const bw = Math.max(2, (trackW * (c.count / max)) / blocks - 2);
     for (let b = 0; b < blocks; b++) {
       out += `<rect x="${(rx + b * (bw + 2)).toFixed(1)}" y="${y + 3}" width="${bw.toFixed(1)}" height="10" fill="${C.limeDeep}" opacity="0.85"/>`;
     }
     out += textPath(F.mono, String(c.count).padStart(2, '0'), rx + trackW + 14, y + 12, 11, C.faint);
   });
-  if (numbers.updated) out += textPath(F.s500, `Updated ${numbers.updated}`, 44, H - 26, 12, C.faint);
+  out += textPath(F.s500, taken, 44, H - 26, 12, C.faint);
   out += textPath(F.s500, 'github.com/SAY-5', W - 44, H - 26, 12, C.faint, { anchor: 'end' });
   out += '</svg>';
   return out;
 }
 
 // ---------- README ----------
-function readme(data, numbers) {
-  const cards = data.flagships.map((p) => {
-    const i = data.projects.findIndex((q) => q.name === p.name) + 1;
-    return `<a href="${SITE}/p/${p.name}"><img src="assets/cards/${p.name}.svg" alt="${esc(p.title)}: ${esc(p.tagline)}" width="49%"></a>`;
+function recentSection(recent) {
+  const unread = recent.filter((r) => r.release?.checked !== TODAY).map((r) => r.repo);
+  // A list rather than a table: a narrow table column breaks the dates at their hyphens on a phone.
+  const items = recent.map((r) => {
+    const rel = r.release;
+    const meta = [`<a href="https://github.com/${USER}/${r.repo}">${r.repo}</a>`, rel ? `<a href="${rel.releaseUrl}">${esc(rel.tag)}</a>, ${rel.released}` : 'no release found'];
+    return `- <a href="${r.href}"><b>${esc(r.title)}</b></a><br><sub>${meta.join(' &middot; ')}</sub><br>${esc(r.line)}`;
   });
-  const merged = numbers.mergedPRsElsewhere ?? numbers.mergedPRs;
+  const note = unread.length ? ` GitHub did not answer for ${unread.join(', ')}; those entries show the release last read.` : '';
+  return `The latest release of each repository, read from GitHub on ${TODAY}.${note} Each title links to the write-up, or to the repository where there is no write-up yet.
+
+${items.join('\n\n')}`;
+}
+
+function readme(data, numbers, recent, selected) {
+  const cards = selected.map((p) => `<a href="${SITE}/p/${p.name}"><img src="assets/cards/${p.name}.svg" alt="${esc(p.title)}: ${esc(p.tagline)}" width="49%"></a>`);
+  const merged = numbers.mergedPRsElsewhere;
+  const { alt } = statsModel(data, numbers);
   return `<a href="${SITE}"><img src="assets/banner.svg" alt="Sai Asish Y. Software engineer. Distributed systems, low latency infrastructure, databases." width="100%"></a>
 
 <p>
@@ -288,6 +388,10 @@ function readme(data, numbers) {
 
 Software engineer working on distributed systems, low latency infrastructure, and databases. MS in Computer Science from Stony Brook University, B.Tech from VIT. Previously at Nokia and in two research labs, CUBIT and the Data Management and Biomedical Analytics Lab. Open to SDE and SWE roles.
 
+## Recent releases
+
+${recentSection(recent)}
+
 ## Selected work
 
 Each card opens the write-up; every one of these has a demo that runs in the browser.
@@ -296,29 +400,36 @@ Each card opens the write-up; every one of these has a demo that runs in the bro
 ${cards.join('\n')}
 </p>
 
-<a href="${SITE}/work"><img src="assets/stats.svg" alt="Numbers: public repos, merged pull requests, selected projects, and the catalog by category" width="100%"></a>
+<a href="${SITE}/work"><img src="assets/stats.svg" alt="${esc(alt)}" width="100%"></a>
 
 ## Open source
 
-${merged != null ? `${merged} merged pull requests in projects outside this account` : 'Merged pull requests in projects outside this account'} across the JavaScript, Python, Go, and Rust ecosystems. Until May 2026 the approach was volume; since May 5, 2026 it is one issue at a time: reproduce it, fix it, test it, and land a single clean change. Apologies to the maintainers who dealt with duplicate or half-tested PRs before that.
+${merged != null ? `${merged} merged pull requests in projects outside this account (as of ${numbers.pullsTaken})` : 'Merged pull requests in projects outside this account'} across the JavaScript, Python, Go, and Rust ecosystems. Until May 2026 the approach was volume; since May 5, 2026 it is one issue at a time: reproduce it, fix it, test it, and land a single clean change. Apologies to the maintainers who dealt with duplicate or half-tested PRs before that.
 
 ## Contributions
 
-<img src="https://raw.githubusercontent.com/SAY-5/SAY-5/output/github-snake-dark.svg" alt="Contribution graph" width="100%">
+<img src="https://raw.githubusercontent.com/SAY-5/SAY-5/output/github-snake-dark.svg" alt="Contribution graph for the past year, animated" width="100%">
 
-<sub>Assets are generated from the portfolio's project data by <code>scripts/build.mjs</code> and refreshed daily.</sub>
+<sub>Assets are generated from the portfolio's project data, the GitHub API and <code>data/recent-work.json</code> by <code>scripts/build.mjs</code> and refreshed daily.</sub>
 `;
 }
 
 // ---------- main ----------
 const data = await loadProjects();
 const numbers = await githubNumbers();
+const recent = await recentWork(data);
+// A project listed under recent releases is not repeated as a card.
+const selected = data.flagships.filter((p) => !recent.some((r) => r.repo === p.name));
 const F = await loadFonts();
 fs.writeFileSync(path.join(ASSETS, 'banner.svg'), banner(F, data, numbers));
 fs.writeFileSync(path.join(ASSETS, 'stats.svg'), stats(F, data, numbers));
-for (const p of data.flagships) {
-  const i = data.projects.findIndex((q) => q.name === p.name) + 1;
-  fs.writeFileSync(path.join(ASSETS, 'cards', `${p.name}.svg`), card(F, p, i));
+const cardDir = path.join(ASSETS, 'cards');
+for (const f of fs.readdirSync(cardDir)) {
+  if (f.endsWith('.svg') && !selected.some((p) => `${p.name}.svg` === f)) fs.unlinkSync(path.join(cardDir, f));
 }
-fs.writeFileSync(path.join(ROOT, 'README.md'), readme(data, numbers));
-console.log(`built: banner, stats, ${data.flagships.length} cards, README (${data.projects.length} projects, numbers ${JSON.stringify(numbers)})`);
+for (const p of selected) {
+  const i = data.projects.findIndex((q) => q.name === p.name) + 1;
+  fs.writeFileSync(path.join(cardDir, `${p.name}.svg`), card(F, p, i));
+}
+fs.writeFileSync(path.join(ROOT, 'README.md'), readme(data, numbers, recent, selected));
+console.log(`built: banner, stats, ${selected.length} cards, ${recent.length} recent releases, README (${data.projects.length} projects, numbers ${JSON.stringify(numbers)})`);
