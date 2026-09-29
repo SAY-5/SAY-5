@@ -1,0 +1,74 @@
+[
+  {
+    "repo": "rideloop",
+    "line": "Ride request, driver location and dispatch services in Python, with a geohash-partitioned DynamoDB driver index, PostgreSQL trips and a React rider map.",
+    "source": "README"
+  },
+  {
+    "repo": "modelgate",
+    "line": "FastAPI serving for a PyTorch ETA model: strict input validation, shadow runs, canaries with automatic rollback, and version swaps load-tested with 0 dropped requests.",
+    "source": "README"
+  },
+  {
+    "repo": "dispatchgrid",
+    "line": "Ride matching on Kafka Streams in Java 21 and Spring Boot 3, with trips in city-keyed MySQL shards, driver positions in Redis GEO and zero-downtime rolling updates on Kubernetes.",
+    "source": "README"
+  },
+  {
+    "repo": "failsafe",
+    "line": "Python API gateway with token-bucket rate limiting, per-replica circuit breakers, retries and failover; its chaos runs kill replicas under load with zero client-visible failures.",
+    "source": "README, v5.0.1 release notes"
+  },
+  {
+    "repo": "launchbridge",
+    "line": "FastAPI and PostgreSQL integration service: signed inbound webhooks, deduplication, bounded retries, replay of failed events and secret rotation.",
+    "source": "README"
+  },
+  {
+    "repo": "playbook",
+    "line": "Turns an expert's walkthrough and SOP into a tool-calling agent with Jira and Slack tools, grades its runs against the expert's rubric and feeds failures back as corrections.",
+    "source": "README"
+  },
+  {
+    "repo": "panelist",
+    "line": "Expert grading platform: tasks routed by expertise tag, hidden attention checks, pay per approved task, and approved grades exported as versioned, checksummed JSONL datasets.",
+    "source": "README"
+  },
+  {
+    "repo": "ledgermesh",
+    "line": "Order saga across three Spring Boot services with Kafka, Redis and Resilience4j; in the recorded chaos run, 1200 orders under three service kills ended with none failed or stuck.",
+    "source": "README, v5.0.0 release notes"
+  },
+  {
+    "repo": "tradegraph",
+    "line": "Counterparty knowledge graph from SEC filings: a Python ETL loads RDF into a SPARQL store, a Spring Boot API answers lineage and exposure queries, and an Angular explorer draws it.",
+    "source": "README"
+  },
+  {
+    "repo": "spoofline",
+    "line": "Audio and video spoof detection with a CNN-LSTM per stream, calibrated and fused, evaluated on attack families held out of training, on a deterministically generated corpus.",
+    "source": "README"
+  },
+  {
+    "repo": "expertloop",
+    "line": "Turns expert task notes into versioned agent instructions with linked sources, and gates approved workflows behind test cases before they reach business systems.",
+    "source": "README"
+  },
+  {
+    "repo": "conduit",
+    "line": "Connector kit with one adapter interface for Slack, Jira and signed webhooks: idempotency keys, backoff, a circuit breaker per connector and an SQS dead-letter queue.",
+    "source": "README"
+  },
+  {
+    "repo": "kernelcheck",
+    "title": "CUDA Kernel Fuzz Tester",
+    "line": "Differential fuzz tester for CUDA C++ kernels on a CPU execution model, never run on a GPU; it detected 156 of 171 seeded mutants, and the 15 it missed are equivalent under the kernels' contracts.",
+    "source": "README, v4.0.0 release notes"
+  },
+  {
+    "repo": "rankfault",
+    "title": "Collective Fault Injection Harness",
+    "line": "Fault injection for multi-rank PyTorch jobs: kills, freezes, link faults and ordering skew injected mid-collective; measured with gloo on CPU on Linux, 0 of 114 runs stalled, NCCL never run.",
+    "source": "README, v5.0.0 release notes"
+  }
+]
