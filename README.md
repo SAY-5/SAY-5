@@ -59,11 +59,11 @@ Each card opens the write-up; every one of these has a demo that runs in the bro
 <a href="https://sayportfolio.vercel.app/p/snapvault"><img src="assets/cards/snapvault.svg" alt="Content-Addressed Backup: Distributed backup and restore with content-addressed dedup and verified parallel recovery" width="49%"></a>
 </p>
 
-<a href="https://sayportfolio.vercel.app/work"><img src="assets/stats.svg" alt="Numbers. Figures taken 2026-10-05. 166 public repositories, not counting 2298 forks; 1211 merged pull requests in projects outside this account; 167 projects in the portfolio catalog, 23 of them selected, each with a live demo. Catalog by category: Infra and Distributed 35, Agents and Language 31, Data and ML 27, Web and Full-stack 23, Systems and C++ 20, Developer Tools 16, Instrumentation and Test 13, Other 2." width="100%"></a>
+<a href="https://sayportfolio.vercel.app/work"><img src="assets/stats.svg" alt="Numbers. Figures taken 2026-10-05. 166 public repositories, not counting 2298 forks; 1212 merged pull requests in projects outside this account; 167 projects in the portfolio catalog, 23 of them selected, each with a live demo. Catalog by category: Infra and Distributed 35, Agents and Language 31, Data and ML 27, Web and Full-stack 23, Systems and C++ 20, Developer Tools 16, Instrumentation and Test 13, Other 2." width="100%"></a>
 
 ## Open source
 
-1211 merged pull requests in projects outside this account (as of 2026-10-05) across the JavaScript, Python, Go, and Rust ecosystems. Until May 2026 the approach was volume; since May 5, 2026 it is one issue at a time: reproduce it, fix it, test it, and land a single clean change. Apologies to the maintainers who dealt with duplicate or half-tested PRs before that.
+1212 merged pull requests in projects outside this account (as of 2026-10-05) across the JavaScript, Python, Go, and Rust ecosystems. Until May 2026 the approach was volume; since May 5, 2026 it is one issue at a time: reproduce it, fix it, test it, and land a single clean change. Apologies to the maintainers who dealt with duplicate or half-tested PRs before that.
 
 ## Contributions
 
