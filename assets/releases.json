@@ -4,84 +4,84 @@
     "released": "2026-09-08",
     "releaseUrl": "https://github.com/SAY-5/rideloop/releases/tag/v5.0.0",
     "description": "Ride request, driver location, and dispatch microservices with geohash-indexed DynamoDB positions, PostgreSQL trips, and a React rider map",
-    "checked": "2026-10-07"
+    "checked": "2026-10-08"
   },
   "modelgate": {
     "tag": "v5.0.2",
     "released": "2026-09-29",
     "releaseUrl": "https://github.com/SAY-5/modelgate/releases/tag/v5.0.2",
     "description": "PyTorch ETA model serving in FastAPI with input validation, shadow runs of new versions, Prometheus metrics, and zero-drop version swaps",
-    "checked": "2026-10-07"
+    "checked": "2026-10-08"
   },
   "dispatchgrid": {
     "tag": "v5.2.0",
     "released": "2026-09-29",
     "releaseUrl": "https://github.com/SAY-5/dispatchgrid/releases/tag/v5.2.0",
     "description": "Rider request, driver location, and matching services in Java with Kafka Streams, city-sharded MySQL, Redis geospatial lookup, and Kubernetes rolling updates",
-    "checked": "2026-10-07"
+    "checked": "2026-10-08"
   },
   "failsafe": {
     "tag": "v5.0.2",
     "released": "2026-09-29",
     "releaseUrl": "https://github.com/SAY-5/failsafe/releases/tag/v5.0.2",
     "description": "Resilient Python API gateway with token-bucket rate limiting, circuit breakers, retries with backoff, Prometheus metrics, and Kubernetes chaos-tested failover",
-    "checked": "2026-10-07"
+    "checked": "2026-10-08"
   },
   "launchbridge": {
     "tag": "v5.1.0",
     "released": "2026-09-27",
     "releaseUrl": "https://github.com/SAY-5/launchbridge/releases/tag/v5.1.0",
     "description": "FastAPI integration service with signed webhooks, PostgreSQL deduplication, bounded retries, failed-event replay, Docker builds, and an AWS deployment with smoke tests",
-    "checked": "2026-10-07"
+    "checked": "2026-10-08"
   },
   "playbook": {
     "tag": "v6.0.0",
     "released": "2026-09-27",
     "releaseUrl": "https://github.com/SAY-5/playbook/releases/tag/v6.0.0",
     "description": "Expert SOP to deployed agent: ingests a walkthrough and SOP into a tool-calling agent with Jira and Slack tools, grades runs against expert rubrics, feeds corrections back into its prompts, deployed on AWS with Terraform",
-    "checked": "2026-10-07"
+    "checked": "2026-10-08"
   },
   "panelist": {
     "tag": "v6.0.0",
     "released": "2026-09-28",
     "releaseUrl": "https://github.com/SAY-5/panelist/releases/tag/v6.0.0",
     "description": "Expert grading and data delivery platform: expertise-tag task routing, attention checks, per-task payouts, and rubric scores in PostgreSQL, served by FastAPI on AWS ECS",
-    "checked": "2026-10-07"
+    "checked": "2026-10-08"
   },
   "ledgermesh": {
     "tag": "v6.0.0",
     "released": "2026-09-29",
     "releaseUrl": "https://github.com/SAY-5/ledgermesh/releases/tag/v6.0.0",
     "description": "Three fault-tolerant Spring Boot microservices on Docker with Kafka messaging, Redis caching, Resilience4j circuit breakers and timeouts, GitLab CI, and chaos tests with zero failed orders",
-    "checked": "2026-10-07"
+    "checked": "2026-10-08"
   },
   "tradegraph": {
     "tag": "v5.1.1",
     "released": "2026-09-28",
     "releaseUrl": "https://github.com/SAY-5/tradegraph/releases/tag/v5.1.1",
     "description": "Counterparty knowledge graph in Stardog from SEC filings: Python ETL, Spring Boot SPARQL APIs with lineage and exposure queries, Angular explorer",
-    "checked": "2026-10-07"
+    "checked": "2026-10-08"
   },
   "spoofline": {
     "tag": "v5.1.0",
     "released": "2026-09-27",
     "releaseUrl": "https://github.com/SAY-5/spoofline/releases/tag/v5.1.0",
     "description": "Two-stream audio and video spoof detection with per-stream calibration and score fusion",
-    "checked": "2026-10-07"
+    "checked": "2026-10-08"
   },
   "expertloop": {
     "tag": "v5.1.0",
     "released": "2026-09-27",
     "releaseUrl": "https://github.com/SAY-5/expertloop/releases/tag/v5.1.0",
     "description": "Turns expert task notes into agent instructions with linked sources, tracks edits and approval state in PostgreSQL, and gates approved workflows behind test cases before they reach business systems",
-    "checked": "2026-10-07"
+    "checked": "2026-10-08"
   },
   "conduit": {
     "tag": "v6.0.0",
     "released": "2026-09-28",
     "releaseUrl": "https://github.com/SAY-5/conduit/releases/tag/v6.0.0",
     "description": "Reusable integration connector kit: one adapter interface for Slack, Jira, and webhooks with idempotency keys, backoff retries, an SQS dead-letter queue, and Terraform so a new integration ships from one config file",
-    "checked": "2026-10-07"
+    "checked": "2026-10-08"
   },
   "kernelcheck": {
     "tag": "v4.0.0",
