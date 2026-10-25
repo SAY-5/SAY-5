@@ -7,16 +7,16 @@
     "checked": "2026-10-25"
   },
   "modelgate": {
-    "tag": "v5.0.3",
+    "tag": "v5.0.4",
     "released": "2026-10-25",
-    "releaseUrl": "https://github.com/SAY-5/modelgate/releases/tag/v5.0.3",
+    "releaseUrl": "https://github.com/SAY-5/modelgate/releases/tag/v5.0.4",
     "description": "PyTorch ETA model serving in FastAPI with input validation, shadow runs of new versions, Prometheus metrics, and zero-drop version swaps",
     "checked": "2026-10-25"
   },
   "dispatchgrid": {
-    "tag": "v5.2.0",
-    "released": "2026-09-29",
-    "releaseUrl": "https://github.com/SAY-5/dispatchgrid/releases/tag/v5.2.0",
+    "tag": "v5.2.1",
+    "released": "2026-10-25",
+    "releaseUrl": "https://github.com/SAY-5/dispatchgrid/releases/tag/v5.2.1",
     "description": "Rider request, driver location, and matching services in Java with Kafka Streams, city-sharded MySQL, Redis geospatial lookup, and Kubernetes rolling updates",
     "checked": "2026-10-25"
   },
@@ -63,9 +63,9 @@
     "checked": "2026-10-25"
   },
   "spoofline": {
-    "tag": "v5.1.1",
+    "tag": "v5.1.2",
     "released": "2026-10-25",
-    "releaseUrl": "https://github.com/SAY-5/spoofline/releases/tag/v5.1.1",
+    "releaseUrl": "https://github.com/SAY-5/spoofline/releases/tag/v5.1.2",
     "description": "Two-stream audio and video spoof detection with per-stream calibration and score fusion",
     "checked": "2026-10-25"
   },
@@ -77,9 +77,9 @@
     "checked": "2026-10-25"
   },
   "conduit": {
-    "tag": "v6.0.0",
-    "released": "2026-09-28",
-    "releaseUrl": "https://github.com/SAY-5/conduit/releases/tag/v6.0.0",
+    "tag": "v6.0.1",
+    "released": "2026-10-25",
+    "releaseUrl": "https://github.com/SAY-5/conduit/releases/tag/v6.0.1",
     "description": "Reusable integration connector kit: one adapter interface for Slack, Jira, and webhooks with idempotency keys, backoff retries, an SQS dead-letter queue, and Terraform so a new integration ships from one config file",
     "checked": "2026-10-25"
   },
