@@ -84,17 +84,17 @@
     "checked": "2026-10-25"
   },
   "kernelcheck": {
-    "tag": "v4.0.0",
-    "released": "2026-09-29",
-    "releaseUrl": "https://github.com/SAY-5/kernelcheck/releases/tag/v4.0.0",
+    "tag": "v5.1.1",
+    "released": "2026-10-25",
+    "releaseUrl": "https://github.com/SAY-5/kernelcheck/releases/tag/v5.1.1",
     "description": "CUDA C++ kernels with a CPU execution model that runs the same sources without a GPU",
-    "checked": "2026-09-29"
+    "checked": "2026-10-25"
   },
   "rankfault": {
-    "tag": "v5.0.0",
-    "released": "2026-09-28",
-    "releaseUrl": "https://github.com/SAY-5/rankfault/releases/tag/v5.0.0",
+    "tag": "v5.1.1",
+    "released": "2026-10-25",
+    "releaseUrl": "https://github.com/SAY-5/rankfault/releases/tag/v5.1.1",
     "description": "Fault injection harness for multi-rank PyTorch distributed jobs: rank kills, freezes, link delays and cuts, and collective ordering skew injected while collectives are in flight, each run classified by a pre-registered outcome classifier. Measured on gloo (CPU).",
-    "checked": "2026-09-29"
+    "checked": "2026-10-25"
   }
 }
