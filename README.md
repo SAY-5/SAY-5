@@ -21,7 +21,7 @@ The latest release of each repository, read from GitHub on 2026-10-25. GitHub di
 
 - <a href="https://sayportfolio.vercel.app/p/ledgermesh"><b>Order Saga With Chaos Proof</b></a><br><sub><a href="https://github.com/SAY-5/ledgermesh">ledgermesh</a> &middot; <a href="https://github.com/SAY-5/ledgermesh/releases/tag/v6.0.0">v6.0.0</a>, 2026-09-29</sub><br>Order saga across three Spring Boot services with Kafka, Redis and Resilience4j; in the recorded chaos run, 1200 orders under three service kills ended with none failed or stuck.
 
-- <a href="https://sayportfolio.vercel.app/p/kernelcheck"><b>CUDA Kernel Fuzz Tester</b></a><br><sub><a href="https://github.com/SAY-5/kernelcheck">kernelcheck</a> &middot; <a href="https://github.com/SAY-5/kernelcheck/releases/tag/v4.0.0">v4.0.0</a>, 2026-09-29</sub><br>Differential fuzz tester for CUDA C++ kernels on a CPU execution model, never run on a GPU; it detected 156 of 171 seeded mutants, and the 15 it missed are equivalent under the kernels' contracts.
+- <a href="https://sayportfolio.vercel.app/p/kernelcheck"><b>CUDA Kernel Fuzz Tester</b></a><br><sub><a href="https://github.com/SAY-5/kernelcheck">kernelcheck</a> &middot; <a href="https://github.com/SAY-5/kernelcheck/releases/tag/v4.0.0">v4.0.0</a>, 2026-09-29</sub><br>Differential fuzz tester for CUDA C++ kernels on a CPU execution model, never run on a GPU; of 171 seeded mutants, 159 are real defects, and it detected 156 of those (in-sample).
 
 - <a href="https://sayportfolio.vercel.app/p/panelist"><b>Expert Grading And Delivery Platform</b></a><br><sub><a href="https://github.com/SAY-5/panelist">panelist</a> &middot; <a href="https://github.com/SAY-5/panelist/releases/tag/v6.0.0">v6.0.0</a>, 2026-09-28</sub><br>Expert grading platform: tasks routed by expertise tag, hidden attention checks, pay per approved task, and approved grades exported as versioned, checksummed JSONL datasets.
 
@@ -59,7 +59,7 @@ Each card opens the write-up; every one of these has a demo that runs in the bro
 <a href="https://sayportfolio.vercel.app/p/snapvault"><img src="assets/cards/snapvault.svg" alt="Content-Addressed Backup: Distributed backup and restore with content-addressed dedup and verified parallel recovery" width="49%"></a>
 </p>
 
-<a href="https://sayportfolio.vercel.app/work"><img src="assets/stats.svg" alt="Numbers. Figures taken 2026-10-25. 166 public repositories, not counting 2380 forks; 1278 merged pull requests in projects outside this account; 167 projects in the portfolio catalog, 23 of them selected, each with a live demo. Catalog by category: Infra and Distributed 35, Agents and Language 31, Data and ML 27, Web and Full-stack 23, Systems and C++ 20, Developer Tools 16, Instrumentation and Test 13, Other 2." width="100%"></a>
+<a href="https://sayportfolio.vercel.app/work"><img src="assets/stats.svg" alt="Numbers. Figures taken 2026-10-25. 166 public repositories, not counting 2382 forks; 1278 merged pull requests in projects outside this account; 167 projects in the portfolio catalog, 23 of them selected, each with a live demo. Catalog by category: Infra and Distributed 35, Agents and Language 31, Data and ML 27, Web and Full-stack 23, Systems and C++ 20, Developer Tools 16, Instrumentation and Test 13, Other 2." width="100%"></a>
 
 ## Open source
 
