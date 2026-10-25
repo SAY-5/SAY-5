@@ -62,8 +62,8 @@
   {
     "repo": "kernelcheck",
     "title": "CUDA Kernel Fuzz Tester",
-    "line": "Differential fuzz tester for CUDA C++ kernels on a CPU execution model, never run on a GPU; it detected 156 of 171 seeded mutants, and the 15 it missed are equivalent under the kernels' contracts.",
-    "source": "README, v4.0.0 release notes"
+    "line": "Differential fuzz tester for CUDA C++ kernels on a CPU execution model, never run on a GPU; of 171 seeded mutants, 159 are real defects, and it detected 156 of those (in-sample).",
+    "source": "README, v5.0.1 release notes"
   },
   {
     "repo": "rankfault",
