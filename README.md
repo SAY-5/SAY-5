@@ -11,7 +11,7 @@ Software engineer working on distributed systems, low latency infrastructure, an
 
 ## Recent releases
 
-The latest release of each repository, read from GitHub on 2026-10-26. GitHub did not answer for kernelcheck, rankfault; those entries show the release last read. Each title links to the write-up, or to the repository where there is no write-up yet.
+The latest release of each repository, read from GitHub on 2026-10-27. GitHub did not answer for kernelcheck, rankfault; those entries show the release last read. Each title links to the write-up, or to the repository where there is no write-up yet.
 
 - <a href="https://sayportfolio.vercel.app/p/rideloop"><b>Ride Dispatch Platform</b></a><br><sub><a href="https://github.com/SAY-5/rideloop">rideloop</a> &middot; <a href="https://github.com/SAY-5/rideloop/releases/tag/v5.0.1">v5.0.1</a>, 2026-10-25</sub><br>Ride request, driver location and dispatch services in Python, with a geohash-partitioned DynamoDB driver index, PostgreSQL trips and a React rider map.
 
@@ -59,11 +59,11 @@ Each card opens the write-up; every one of these has a demo that runs in the bro
 <a href="https://sayportfolio.vercel.app/p/snapvault"><img src="assets/cards/snapvault.svg" alt="Content-Addressed Backup: Distributed backup and restore with content-addressed dedup and verified parallel recovery" width="49%"></a>
 </p>
 
-<a href="https://sayportfolio.vercel.app/work"><img src="assets/stats.svg" alt="Numbers. Figures taken 2026-10-26. 166 public repositories, not counting 2384 forks; 1293 merged pull requests in projects outside this account; 167 projects in the portfolio catalog, 23 of them selected, each with a live demo. Catalog by category: Infra and Distributed 35, Agents and Language 31, Data and ML 27, Web and Full-stack 23, Systems and C++ 20, Developer Tools 16, Instrumentation and Test 13, Other 2." width="100%"></a>
+<a href="https://sayportfolio.vercel.app/work"><img src="assets/stats.svg" alt="Numbers. Figures taken 2026-10-27. 166 public repositories, not counting 2384 forks; 1301 merged pull requests in projects outside this account; 167 projects in the portfolio catalog, 23 of them selected, each with a live demo. Catalog by category: Infra and Distributed 35, Agents and Language 31, Data and ML 27, Web and Full-stack 23, Systems and C++ 20, Developer Tools 16, Instrumentation and Test 13, Other 2." width="100%"></a>
 
 ## Open source
 
-1293 merged pull requests in projects outside this account (as of 2026-10-26) across the JavaScript, Python, Go, and Rust ecosystems. Until May 2026 the approach was volume; since May 5, 2026 it is one issue at a time: reproduce it, fix it, test it, and land a single clean change. Apologies to the maintainers who dealt with duplicate or half-tested PRs before that.
+1301 merged pull requests in projects outside this account (as of 2026-10-27) across the JavaScript, Python, Go, and Rust ecosystems. Until May 2026 the approach was volume; since May 5, 2026 it is one issue at a time: reproduce it, fix it, test it, and land a single clean change. Apologies to the maintainers who dealt with duplicate or half-tested PRs before that.
 
 ## Contributions
 
